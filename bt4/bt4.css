@@ -1,0 +1,220 @@
+*{
+    margin: 0 auto;
+    padding: 0;
+
+}
+
+body{
+    display: flex;
+
+}
+.container1{
+    position: relative;
+    margin-top: 200px;
+    border: 1px solid;
+    height: 362px;
+    width: 477px;
+    overflow: hidden;
+}
+
+
+
+
+.text{
+    /* position: absolute; */
+
+   
+}
+
+.title{
+    position: absolute;
+    top: 260px;
+    left: 40px;
+    font-size: 30px;
+    font-family: 'Raleway';
+    color: #fff;
+    transition: all 0.2s ease;
+
+    
+}
+.nice{
+    display: inline-block;
+    
+    
+}
+.lily{
+    padding: 0px;
+   
+    display: inline-block;
+    margin-left: px;
+    font-weight: 800;
+
+}
+.contextt{
+    /* border: 1px solid; */
+    position: absolute;
+    height: 45px;
+    /* opacity: 0; */
+    width: 100%;
+    overflow: hidden;
+    top:65%
+    
+    
+    
+}
+.context{
+    color: #fff;
+    display: inline-block;
+    left: 40px;
+    position: absolute;
+    opacity: 0;
+
+    top: 150%;
+    font-family: 'Raleway';
+    transition: all 0.3s ease;
+    /* top: 69%; */
+    /* font-size: 40px; */
+    
+}
+
+.container1:hover .context
+{
+    color: #fff;
+    display: inline-block;
+    left: 40px;
+    position: absolute;
+    top: 0;
+    opacity: 1;
+    
+
+}
+.container1:hover .title
+{
+    color: #fff;
+    /* display: inline-block; */
+    left: 40px;
+    position: absolute;
+    top: 200px;
+   
+
+}
+.img{
+    /* display: inline-block; */
+    position: absolute;
+    /* height: 500px; */
+    /* width: ; */
+    left: -70px;
+    transition: all 0.5s ease;
+}
+
+.container1:hover .img{
+    /* display: inline-block; */
+    position: absolute;
+    left: 0px;
+    transition: all 1s ease;
+
+}
+
+.layout{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(57, 199, 227);
+    opacity: 0.2;
+}
+.container1:hover .layout{
+    /* display: inline-block; */
+    position: absolute;
+    left: 0px;
+    transition: all 0.5s ease;
+    opacity: 0;
+
+}
+
+.container2{
+    height: 362px;
+    width: 477px;
+
+    margin-top: 50px;
+    position: relative;
+    border: 1px solid;
+    overflow: hidden;
+   
+}
+.img2{
+    position: absolute;
+    /* height: 100px; */
+}
+
+.title2{
+    position: absolute;
+    
+    display: flex;
+    flex-direction: row;
+    top: 240px;
+    left: 40px;
+    color: #fff;
+    
+    font-size: 30px;
+    font-family: 'Raleway';
+    transition: all 0.3s ease;
+}
+
+.dream{
+    display: inline-block;
+}
+.honey{
+    display: inline-block;
+     font-weight: 800;
+}
+.now{
+    position: absolute;
+    
+    display: flex;
+    flex-direction: row;
+    top: 240px;
+    left: 271.5px;
+    color: #fff;
+    
+    font-size: 30px;
+    font-family: 'Raleway';
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.container2:hover .title2{
+    /* position: absolute; */
+    top: 280px;
+    opacity: 1;
+    
+}
+.container2:hover .now{
+    /* position: absolute; */
+    top: 280px;
+    opacity: 1;
+    
+}
+.foot{
+    position: absolute;
+    width: 100%;
+    height: 20px;
+    
+    top: 100%;
+    background-color: #fff;
+    transition: all 0.3s ease;
+}
+.container2:hover .foot{
+    top: 95%
+}
+.layout1{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #996097;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.container2:hover .layout1{
+    opacity: 0.3;
+}
