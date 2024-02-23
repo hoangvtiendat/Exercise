@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<script>
+    function ptb2(a, b, c) {
+        let denlta
+        denlta = b*b - a*a*c
+        if(a == 0 && c!=0){
+            console.log('Nghiem cua phuong trinh la: ', c/b)
+        }
+        else if( (a == 0 && b == 0 && c== 0))
+        {
+            console.log('Phuong trinh vo so nghiem')
+        }
+        else if(a == 0 && b == 0){
+            console.log('Phuong trinh vo nghiem')
+        }
+        else if(a == 0 && b != 0)
+        {
+            console.log('Nghiem cua phuong trinh la: '+ -c/b)
+        }
+        else if(denlta < 0){
+            console.log('Phuong trinh vo nghiem')
+        }
+        else if(denlta == 0){
+            console.log('Phuong trinh co nghiem kep: x = y = ', -(b/(2*a)) )
+        }
+        else{
+            let x, y
+            x = (-b  + Math.sqrt(denlta)) / (2*a)
+            y = (-b  - Math.sqrt(denlta)) / (2*a)
+            console.log('Phuong trinh co 2 nghiem phan biet: \n' , "x: ", x, "\n y: ", y )
+        }
+    }
+
+    ptb2(0,2,3)
+
+
+</script>
+
+<body>
+
+</body>
+
+</html>
