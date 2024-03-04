@@ -37,21 +37,68 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Example</title>
-<script>
-    function onFocusEvent() {
-        console.log("Input field focused");
+<title>Tooltip Hover</title>
+<style>
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
     }
 
-    function onClickEvent() {
-        console.log("Button clicked");
+    .hover-div {
+        position: relative;
+        padding: 10px;
+        background-color: #f0f0f0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
     }
-</script>
+
+    .hover-div:hover {
+        background-color: #e0e0e0;
+    }
+
+    .tooltip {
+        opacity: 0;
+        position: absolute;
+        top: calc(100% + 5px);
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #333;
+        color: #fff;
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-size: 14px;
+        transition: opacity 0.3s;
+    }
+
+    .hover-div:hover .tooltip {
+        opacity: 1;
+    }
+
+    .tooltip::after {
+        content: '';
+        position: absolute;
+        top: -8px;
+        left: 50%;
+        transform: translateX(-50%) rotate(45deg);
+        width: 10px;
+        height: 10px;
+        background-color: #333;
+        border-radius: 2px;
+    }
+</style>
 </head>
 <body>
 
-<input type="text" onfocus="onFocusEvent()" placeholder="Click to focus">
-<button onclick="onClickEvent()">Click me</button>
+<div class="container">
+    <div class="hover-div">
+        Hover here
+        <span class="tooltip">This is a tooltip</span>
+    </div>
+</div>
 
 </body>
 </html>
