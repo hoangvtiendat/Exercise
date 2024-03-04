@@ -99,6 +99,7 @@ html {
     left: 7px;
     margin-top: 5px;
     width: 370px;
+    z-index: -1;
 }
 
 .boxpw {
@@ -109,6 +110,7 @@ html {
     left: 7px;
     margin-top: 5px;
     width: 370px;
+    z-index: -1;
 }
 
 .er {
@@ -118,6 +120,7 @@ html {
     font-weight: 400;
     font-size: 15px;
     color: red;
+
 }
 
 .thongbaous {
