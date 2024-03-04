@@ -1,0 +1,57 @@
+<!-- <html>
+    <body>
+        <div id="message">
+            Chào mừng các bạn đến với freetuts.net
+          </div>
+          <input type="button" onclick="change_background()"/>
+          <input type="button" value="Change color" onclick="change_color()"/>
+          <input type="button" value="Change height" onclick="change_height()"/>
+          <input type="button" value="Change fontsize" onclick="change_font_size()"/>
+        <script language="javascript">
+            function change_background()
+            {
+               document.getElementById("message").style.background = 'red';
+            }
+ 
+            function change_color()
+            {
+               document.getElementById("message").style.color = 'blue';
+            }
+ 
+            function change_height()
+            {
+               document.getElementById("message").style.height = '500px';
+            }
+ 
+            function change_font_size()
+            {
+               document.getElementById("message").style.fontSize = '500px';
+            }
+        </script>
+        
+    </body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Example</title>
+<script>
+    function onFocusEvent() {
+        console.log("Input field focused");
+    }
+
+    function onClickEvent() {
+        console.log("Button clicked");
+    }
+</script>
+</head>
+<body>
+
+<input type="text" onfocus="onFocusEvent()" placeholder="Click to focus">
+<button onclick="onClickEvent()">Click me</button>
+
+</body>
+</html>

@@ -1,0 +1,246 @@
+body
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+html{
+    width: 100%;
+    height: 100%;
+}
+
+
+.container{
+    width: 500px;
+    margin:  0 auto;
+    /* margin-top: 80px; */
+    height: 650px;
+    border: 1px solid rgb(197, 196, 196);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+}
+
+.ab{
+    position: absolute;
+    
+    left: 10px;
+    top: calc(100% / 2 + 1px) ;
+
+    color: rgb(112, 111, 111);
+    font-family: 'Roboto';
+    font-size: 17px;
+    transition: all 0.3s ease;
+
+}
+
+.ac{
+    position: absolute;
+    left: 10px;
+    top: calc(100% / 2 + 1px);
+
+    color: rgb(112, 111, 111);
+    font-family: 'Roboto';
+    font-size: 17px;
+    transition: all 0.3s ease;
+
+}
+
+.user1{
+    margin-top: 20px;
+    height: 40px;
+    width: 370px;
+    border-radius: 3px;
+    border: 1px  solid rgb(206, 204, 204);
+    font-family: 'Roboto';
+    font-size: 17px;
+    font-weight: 400;
+    padding: 10px ;
+}.user2{
+
+    margin-top: 20px;
+    height: 40px;
+    width: 370px;
+    border-radius: 3px;
+    border: 1px  solid rgb(206, 204, 204);
+    font-family: 'Roboto';
+    font-size: 17px;
+    font-weight: 400;
+    padding: 10px ;
+}
+.inpus{
+    
+    position: relative;
+    margin-top: 20px;
+
+
+}
+.inppw{
+    
+    position: relative;
+    margin-top:30px;
+
+}
+
+.boxus {
+    display: none;
+    position: absolute;
+    /* top: 430px; */
+    bottom: -24px;
+    left: 7px;
+    margin-top: 5px;
+    width: 370px;
+}
+
+.boxpw {
+    display: none; 
+    position: absolute;
+    /* top: 430px; */
+    bottom: -24px;
+    left: 7px;
+    margin-top: 5px;
+    width: 370px;
+}
+.er{
+    display: inline-block;
+    /* margin-top: 10px; */
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-size: 15px;
+    color: red;
+}
+
+
+/* .inp:hover .ab{
+    font-size: 15px;
+    top: 10px;
+    left: 6px;
+    background-color: #fff;
+    padding: 0 5px;
+} 
+.inp:hover .ac{
+    font-size: 15px;
+    top: 10px;
+    left: 6px;
+    background-color: #fff;
+    padding: 0 5px;
+} */
+
+.google{
+    margin-top: 40px;
+    font-size: 30px;
+    font-family: 'Roboto';
+}
+
+.DangNhap{
+    margin-top: 0px;
+    font-weight: 500;
+    font-size: 24px;
+    font-family: 'Open Sans';
+}
+
+.tiepTuc{
+    margin-top: 10px;
+    font-family: 'Roboto';
+    font-size: 15px;
+}
+
+::placeholder{
+    padding-left: 0px;
+    color: rgb(112, 111, 111);
+}
+
+a{
+    text-decoration: none;
+    color: #174ea6;
+
+}
+
+.quen{
+    display: inline-block;
+    /* margin-top: 10px; */
+    font-family: 'Roboto';
+    font-weight: 500;
+    font-size: 15px;
+
+
+}
+.quenn{
+
+    width: 370px;
+    margin-top: 40px;
+}
+
+.note{
+    margin-top: 40px;
+    font-family: 'Roboto';
+    font-size: 15px;
+    font-weight: 400; 
+    color: #5f6368;
+}
+
+.timhieuThem{
+    display: block;
+    margin-top: 5px;
+    font-family: 'Roboto';
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.button{
+    display: flex;
+    width: 370px;
+    margin-top: 40px;
+
+    justify-content: space-between;
+}
+
+.taotk{
+
+    font-family: 'Open Sans';
+    font-size: 14px;
+    font-weight: 500; 
+    color: #1c6adf;
+    transition: all 0.5s ease;
+
+    width: 100px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    padding: 0 3px;
+}
+.taotk:hover{
+    background-color: #e6ebf6;
+}
+
+.dangnhap{
+
+    font-family: 'Open Sans';
+    font-size: 14px;
+    font-weight: 400; 
+    color: #fff ;
+    border: none;
+    transition: all 0.5s ease;
+    background-color:#1c6adf ;
+    width: 110px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    padding: 0 3px;
+    cursor: pointer;
+}
+.dangnhap:hover{
+    background-color: #1655b4;
+    box-shadow: 0 0 10px rgba(71, 71, 71, 0.346);
+}
+.logo   {
+    width: 80px;
+}
