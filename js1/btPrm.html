@@ -32,10 +32,12 @@
         border-radius: 10px;
         padding: 5px;
         width: 250px;
-        /* height: 250px; */
+
         position: relative;
         box-shadow: 0 0 20px rgba(0, 0, 0, 0.513);
         margin: 20px;
+        height: 420px;
+
 
 
 
@@ -47,16 +49,23 @@
         border-radius: 10px;
 
 
+
     }
+
     .status {
         position: absolute;
-        top: 115px;
-        left: 10px;
+
+        left: 5px;
+        bottom: 9px;
         background-color: rgb(246, 133, 4);
         padding: 5px;
         border-radius: 7px;
         font-size: 10px;
         box-shadow: 0 0 10px rgba(246, 133, 4, 0.473);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
 
     }
 
@@ -66,6 +75,7 @@
         font-weight: 700;
         border-left: 2px solid rgb(246, 133, 4);
         padding-left: 5px;
+        height: 60px;
     }
 
     .ct {
@@ -81,6 +91,14 @@
 
 
     }
+    .tltSts{
+
+        display: inline-block;
+    }
+    .img {
+        position: relative;
+    }
+
 
     .ct::-webkit-scrollbar {
         width: 10px;
@@ -110,23 +128,25 @@
 
     a {
         color: rgb(246, 133, 4);
+        display: inline-block;
+        margin: 10px 0;
 
     }
 
     .id {
         position: absolute;
-        top: 10px;
-        right: 10px;
+        top: 7px;
+        right: 7px;
         border-radius: 100%;
-        width: 20px;
-        height: 20px;
+        width: 25px;
+        height: 25px;
         background-color: rgb(246, 133, 4);
 
         display: flex;
         justify-content: center;
         align-items: center;
         font-size: 9px;
-        box-shadow: 0 0 5px rgba(0, 13, 255, 0.545);
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.545);
 
     }
 
@@ -148,7 +168,15 @@
         display: flex;
         justify-content: space-between;
         margin-bottom: 5px;
+        
+
     }
+    .pubTlt{
+        font-weight: 800;
+    }
+
+    
+
 
     .thumbnail {
         display: none;
@@ -170,6 +198,20 @@
             align-items: center;
         }
 
+        .img {
+            position: relative;
+
+            width: auto;
+            margin: 0;
+            margin-right: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 5000px;
+
+
+        }
+
         .image {
             display: none;
 
@@ -179,17 +221,31 @@
             display: inline-block;
 
             border-radius: 10px;
-            height: 100%;
+            width: 100%;
+
 
 
         }
 
-        .img {
-            height: 100%;
-            width: auto;
-            margin: 0;
-            margin-right: 20px;
 
+
+        .status {
+            position: absolute;
+            bottom: calc(100% /40);
+            left: calc(100% /45);
+            height: calc(100%/16);
+            width: calc(100% /4.6);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 0.7em;
+
+        }
+
+        .id {
+            width: calc(100% / 11);
+            height: calc(100% /11);
+            font-size: 10px;
         }
 
     }
@@ -203,6 +259,10 @@
                 <img class="image" src="https://dummyimage.com/800x430/FFFFFF/lorem-ipsum.png&text=jsonplaceholder.org"
                     alt="">
                 <img class="thumbnail" src="" alt="">
+                <div class="status">published</div>
+                <div class="id">1</div>
+
+
             </div>
 
             <div>
@@ -238,7 +298,6 @@
                 </div>
 
 
-                <div class="id">1</div>
                 <div class="link1">
                     <a href="" class="link">link url</a>
 
@@ -249,7 +308,6 @@
                     <div class="contentct">lorem-ipsum</div>
 
                 </div>
-                <div class="status">published</div>
                 <div class="category">
                     <div class="titlect">category: </div>
                     <div class="contentct">lorem</div>

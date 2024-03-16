@@ -16,6 +16,12 @@ data.then(function(res)
                         <img class="image" src="${item.image}"
                         alt="">
                         <img class="thumbnail" src="${item.thumbnail}" alt="">
+                        <div class = "status">
+                            <div class="tltSts">${item.status}</div>
+                        </div>
+                        <div class="id">${item.id}</div>
+
+
                     </div>
                     
                     <div class = "context">
@@ -26,7 +32,6 @@ data.then(function(res)
                         </div>
 
 
-                        <div class="id">${item.id}</div>
                         <a href="${item.image}" class="link">link url</a>
 
                         <div class="category">
@@ -34,7 +39,6 @@ data.then(function(res)
                             <div class="contentct">${item.slug}</div>
 
                         </div>
-                        <div class="status">${item.status}</div>
                         <div class="category">
                             <div class="titlect">category: </div>
                             <div class="contentct">${item.category}</div>
