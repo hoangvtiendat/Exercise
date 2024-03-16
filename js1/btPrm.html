@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+    href="https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,100..900;1,100..900&family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet">
+<style>
+    * {
+        font-family: "Roboto Flex", sans-serif;
+        font-weight: 300;
+    }
+
+    #container {
+        /* display: flex; */
+        /* width: 500px; */
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(149, 130, 235);
+    }
+
+    .article {
+        background-color: rgb(232, 232, 230);
+        border-radius: 10px;
+        padding: 5px;
+        width: 250px;
+        /* height: 250px; */
+        position: relative;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.513);
+        margin: 20px;
+
+
+
+
+    }
+
+    .image {
+        width: 100%;
+        border-radius: 10px;
+
+
+    }
+    .status {
+        position: absolute;
+        top: 115px;
+        left: 10px;
+        background-color: rgb(246, 133, 4);
+        padding: 5px;
+        border-radius: 7px;
+        font-size: 10px;
+        box-shadow: 0 0 10px rgba(246, 133, 4, 0.473);
+
+    }
+
+    .title {
+        margin-left: 2px;
+        margin-bottom: 10px;
+        font-weight: 700;
+        border-left: 2px solid rgb(246, 133, 4);
+        padding-left: 5px;
+    }
+
+    .ct {
+        width: 100%;
+        height: 80px;
+        overflow-y: auto;
+        border: 0.5px solid black;
+        border-radius: 5px;
+        background-color: rgb(188, 185, 185);
+        font-size: 13px;
+        margin-bottom: 5px;
+        /* border: 1px solid; */
+
+
+    }
+
+    .ct::-webkit-scrollbar {
+        width: 10px;
+        background-color: rgb(255, 255, 255);
+        border-radius: 5px;
+    }
+
+    .ct::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    .ct::-webkit-scrollbar-thumb {
+        background-color: rgb(246, 133, 4);
+        border-radius: 3px;
+    }
+
+    .content {
+
+        /* white-space: nowrap; */
+        text-overflow: ellipsis;
+        margin-bottom: 10px;
+
+
+
+
+    }
+
+    a {
+        color: rgb(246, 133, 4);
+
+    }
+
+    .id {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        border-radius: 100%;
+        width: 20px;
+        height: 20px;
+        background-color: rgb(246, 133, 4);
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 9px;
+        box-shadow: 0 0 5px rgba(0, 13, 255, 0.545);
+
+    }
+
+    .category {
+        display: flex;
+        margin-bottom: 5px;
+
+    }
+
+    .titlect {
+        margin-right: 5px;
+    }
+
+    .titlect {
+        font-weight: 800
+    }
+
+    .publishedAt {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 5px;
+    }
+
+    .thumbnail {
+        display: none;
+    }
+
+    @media only screen and (max-width: 890px) {
+        #container {
+            display: flex;
+            flex-direction: column;
+
+        }
+
+        .article {
+            width: calc(100% - 20px);
+            margin: 20px 0;
+            display: flex;
+            /* height: 300px; */
+            justify-content: center;
+            align-items: center;
+        }
+
+        .image {
+            display: none;
+
+        }
+
+        .thumbnail {
+            display: inline-block;
+
+            border-radius: 10px;
+            height: 100%;
+
+
+        }
+
+        .img {
+            height: 100%;
+            width: auto;
+            margin: 0;
+            margin-right: 20px;
+
+        }
+
+    }
+</style>
+
+<body>
+
+    <div id="container">
+        <div class="article">
+            <div class="img">
+                <img class="image" src="https://dummyimage.com/800x430/FFFFFF/lorem-ipsum.png&text=jsonplaceholder.org"
+                    alt="">
+                <img class="thumbnail" src="" alt="">
+            </div>
+
+            <div>
+                <div class="title">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+
+                <div class="ct">
+                    <div class="content">Ante taciti nulla sit libero orci sed nam. Sagittis suspendisse gravida ornare
+                        iaculis
+                        cras nullam varius ac ullamcorper. Nunc euismod hendrerit netus ligula aptent potenti. Aliquam
+                        volutpat
+                        nibh scelerisque at. Ipsum molestie phasellus euismod sagittis mauris, erat ut. Gravida morbi,
+                        sagittis
+                        blandit quis ipsum mi mus semper dictum amet himenaeos. Accumsan non congue praesent interdum
+                        habitasse
+                        turpis orci. Ante curabitur porttitor ullamcorper sagittis sem donec, inceptos cubilia venenatis
+                        ac.
+                        Augue fringilla sodales in ullamcorper enim curae; rutrum hac in sociis! Scelerisque integer
+                        varius
+                        et
+                        euismod aenean nulla. Quam habitasse risus nullam enim. Ultrices etiam viverra mattis aliquam?
+                        Consectetur velit vel volutpat eget curae;. Volutpat class mus elementum pulvinar! Nisi
+                        tincidunt
+                        volutpat consectetur. Primis morbi pulvinar est montes diam himenaeos duis elit est orci. Taciti
+                        sociis
+                        aptent venenatis dui malesuada dui justo faucibus primis consequat volutpat. Rhoncus ante purus
+                        eros
+                        nibh, id et hendrerit pellentesque scelerisque vehicula sollicitudin quam. Hac class vitae
+                        natoque
+                        tortor dolor dui praesent suspendisse. Vehicula euismod tincidunt odio platea aenean habitasse
+                        neque
+                        ad
+                        proin. Bibendum phasellus enim fames risus eget felis et sem fringilla etiam. Integer.</div>
+                </div>
+
+
+                <div class="id">1</div>
+                <div class="link1">
+                    <a href="" class="link">link url</a>
+
+                </div>
+
+                <div class="category">
+                    <div class="titlect">slug:</div>
+                    <div class="contentct">lorem-ipsum</div>
+
+                </div>
+                <div class="status">published</div>
+                <div class="category">
+                    <div class="titlect">category: </div>
+                    <div class="contentct">lorem</div>
+                </div>
+                <div class="publishedAt">
+                    <div class="pubTlt">published At: </div>
+                    <div class="pubct">04/02/2023 13:25:21</div>
+                </div>
+                <div class="publishedAt">
+                    <div class="pubTlt">updated At: </div>
+                    <div class="pubct">14/03/2023 17:22:20</div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+</body>
+<script src="btPrm.js">
+
+</script>
+
+</html>
