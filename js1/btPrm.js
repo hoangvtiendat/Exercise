@@ -35,7 +35,7 @@ data.then(function(res)
 
                         </div>
                         <div class="status">${item.status}</div>
-                        <div class="category">√
+                        <div class="category">
                             <div class="titlect">category: </div>
                             <div class="contentct">${item.category}</div>
                         </div>
