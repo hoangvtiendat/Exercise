@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./main.css">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        font-family: "Hedvig Letters Sans", sans-serif;
+    }
+
+    #create-btn {
+        width: 100px;
+        height: 30px;
+        margin-bottom: 20px;
+        background-color: #a6d3fa;
+        border: none;
+        border-radius: 8px;
+    }
+
+    .card {
+        width: fit-content;
+        border: 1px solid #9e9e9e;
+        border-radius: 8px;
+        padding: 10px;
+    }
+
+    .card-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .action {
+        margin-top: 10px;
+        display: flex;
+        gap: 10px;
+    }
+
+    .action>img {
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+    }
+
+    .popup-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #1818188d;
+        display: none;
+    }
+
+    .edit-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #1818188d;
+        display: none;
+    }
+
+    .edit-main {
+        padding: 10px;
+        border-radius: 8px;
+        width: 200px;
+        height: fit-content;
+        background-color: #fff;
+    }
+
+    .cards {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .active {
+        display: flex;
+    }
+
+    .popup-main {
+        padding: 10px;
+        border-radius: 8px;
+        width: 200px;
+        height: fit-content;
+        background-color: #fff;
+    }
+
+    .popup-main button {
+        margin-top: 10px;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="popup-container">
+            <div class="popup-main">
+                <label for="field-name">Name</label>
+                <input type="text" id="field-name">
+                <label for="field-phone">Phone</label>
+                <input type="text" id="field-phone">
+                <label for="field-email">email</label>
+                <input type="text" id="field-email">
+                <button onclick="onCreate()">Create</button>
+            </div>
+        </div>
+        <div class="edit-container">
+            <div class="edit-main">
+                <label for="field-name">Name</label>
+                <input type="text" id="field-nameEdit">
+                <label for="field-phone">Phone</label>
+                <input type="text" id="field-phoneEdit">
+                <label for="field-email">email</label>
+                <input type="text" id="field-emailEdit">
+                <button class="editBtn">Edit</button>
+            </div>
+        </div>
+        <div class="header">
+            <button id="create-btn">Create</button>
+        </div>
+        <!-- list card -->
+        <div class="cards">
+            <div class="card">
+                <div class="card-item">
+                    <img src="./assets/img/icon/contact.svg" alt="">
+                    <span id="name">Huy Nam</span>
+                </div>
+                <div class="card-item">
+                    <img src="./assets/img/icon/contact.svg" alt="">
+                    <span id="phone">+0123123813</span>
+                </div>
+                <div class="card-item">
+                    <img src="./assets/img/icon/email.svg" alt="">
+                    <span id="mail">example@gmail.com</span>
+                </div>
+                <div class="action">
+                    <img id="edit" src="./assets/img/icon/edit.svg" alt="">
+                    <img id="delete" src="./assets/img/icon/delete.svg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+
+    var contact = [
+        {
+            name: 'hi',
+            phone: '0912590577',
+            email: 'hothanhtien@gmail.com'
+        },
+        {
+            name: 'hi',
+            phone: '0912590577',
+            email: 'hothanhtien@gmail.com'
+        }
+    ]
+
+
+    if (localStorage.getItem('contact')) {
+        contact = JSON.parse(localStorage.getItem('contact'));
+    }
+
+    var cardContainer = document.querySelector('.cards')
+    function render() {
+        let element = contact.map(function (item, index) {
+            return `
+        <div class="card">
+                <div class="card-item">
+                    <img src="./assets/img/icon/contact.svg" alt="">
+                    <span id="name">${item.name}</span>
+                </div>
+                <div class="card-item">
+                    <img src="./assets/img/icon/contact.svg" alt="">
+                    <span id="phone">${item.phone}</span>
+                </div>
+                <div class="card-item">
+                    <img src="./assets/img/icon/email.svg" alt="">
+                    <span id="mail">${item.email}</span>
+                </div>
+                <div class="action">
+                    <img id="edit" src="./assets/img/icon/edit.svg" alt="" onclick="editt(${index})">
+                    <img id="delete" src="./assets/img/icon/delete.svg" alt="" onclick="deletee(${index})">
+                </div>
+            </div>
+        `
+        })
+        cardContainer.innerHTML = element.join("");
+    }
+
+    function deletee(id) {
+        contact.splice(id, 1);
+        localStorage.setItem('contact', JSON.stringify(contact));
+
+        render();
+    }
+
+
+    var createBtn = document.querySelector('#create-btn');
+    var popupp = document.querySelector('.popup-container');
+    // console.log(createBtn)
+
+
+    createBtn.addEventListener('click', function () {
+        popupp.classList.toggle('active')
+    })
+
+    popupp.addEventListener('click', function (event) {
+        // console.log(event);
+        popupp.classList.toggle('active')
+        document.getElementById('field-name').value = "";
+        document.getElementById('field-phone').value = "";
+        document.getElementById('field-email').value = "";
+    })
+
+    var popupMain = document.querySelector('.popup-main');
+
+    popupMain.addEventListener('click', function (event) {
+        event.stopPropagation();
+    })
+
+    var shouldClosePopup = false;
+    function onCreate() {
+        console.log('okokoko')
+        popupp.classList.remove('active')
+        var name = document.getElementById('field-name').value
+        var phone = document.getElementById('field-phone').value
+        var email = document.getElementById('field-email').value
+        var dem = 0;
+        if (name == '') dem++;
+        if (phone == '') dem++;
+        if (email == '') dem++;
+        console.log('dem', dem);
+        if (dem != 0) {
+            alert('Please fill in all fields');
+            popupp.classList.add('active');
+        }
+        else {
+            contact.push({
+                name,
+                phone,
+                email
+            })
+
+            localStorage.setItem('contact', JSON.stringify(contact));
+
+            render();
+        }
+
+    }
+
+    render();
+
+
+
+
+
+
+
+
+    var edit = document.querySelectorAll('#edit');
+
+
+    var editContainer = document.querySelector('.edit-container');
+    var editMain = document.querySelector('.edit-main');
+
+
+    editContainer.addEventListener('click', function (event) {
+        editContainer.classList.toggle('active')
+        document.getElementById('field-nameEdit').value = "";
+        document.getElementById('field-phoneEdit').value = "";
+        document.getElementById('field-emailEdit').value = "";
+    })
+
+    editMain.addEventListener('click', function (event) {
+        event.stopPropagation();
+    })
+
+    var idd;
+    function editt(id) {
+        // console.log(id)
+        console.log('okokoko')
+        editContainer.classList.toggle('active')
+        idd = id;
+    }
+
+    let editBtnSubmit = document.querySelector('.editBtn');
+
+    editBtnSubmit.addEventListener('click', function () {
+        var name1 = document.getElementById('field-nameEdit').value
+        var phone1 = document.getElementById('field-phoneEdit').value
+        var mail1 = document.getElementById('field-emailEdit').value
+
+
+        contact[idd].name = name1;
+        contact[idd].phone = phone1;
+        contact[idd].email = mail1;
+
+        // console.log(contact[id].name)
+        localStorage.setItem('contact', JSON.stringify(contact));
+
+        console.log('12345')
+        render();
+        editContainer.classList.remove('active')
+    })
+
+</script>
+
+</html>

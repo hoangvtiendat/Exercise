@@ -31,12 +31,12 @@
         background-color: rgb(232, 232, 230);
         border-radius: 10px;
         padding: 5px;
-        width: 250px;
+        width: 280px;
 
         position: relative;
         box-shadow: 0 0 20px rgba(0, 0, 0, 0.513);
         margin: 20px;
-        height: 420px;
+        height: 485px;
 
 
 
@@ -50,6 +50,28 @@
 
 
 
+    }
+
+    .ed {
+        box-sizing: border-box;
+        margin-top: 10px;
+        /* border: 1px solid; */
+        width: 100%;
+        height: 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 20px;
+    }
+
+    .edit {
+        width: 60px;
+        height: 100%;
+    }
+
+    .delete {
+        width: 60px;
+        height: 100%;
     }
 
     .status {
@@ -91,10 +113,12 @@
 
 
     }
-    .tltSts{
+
+    .tltSts {
 
         display: inline-block;
     }
+
     .img {
         position: relative;
     }
@@ -168,14 +192,15 @@
         display: flex;
         justify-content: space-between;
         margin-bottom: 5px;
-        
+
 
     }
-    .pubTlt{
+
+    .pubTlt {
         font-weight: 800;
     }
 
-    
+
 
 
     .thumbnail {
@@ -198,6 +223,16 @@
             align-items: center;
         }
 
+        .ed {
+            position: absolute;
+            bottom: 10px;
+            justify-content: start;
+        }
+
+        .delete {
+            margin-left: 80px;
+        }
+
         .img {
             position: relative;
 
@@ -207,7 +242,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 5000px;
+            width: 10000px;
 
 
         }
@@ -258,9 +293,11 @@
             <div class="img">
                 <img class="image" src="https://dummyimage.com/800x430/FFFFFF/lorem-ipsum.png&text=jsonplaceholder.org"
                     alt="">
-                <img class="thumbnail" src="" alt="">
+                <img class="thumbnail"
+                    src="https://dummyimage.com/200x200/FFFFFF/lorem-ipsum.png&text=jsonplaceholder.org" alt="">
                 <div class="status">published</div>
                 <div class="id">1</div>
+                
 
 
             </div>
@@ -320,14 +357,91 @@
                     <div class="pubTlt">updated At: </div>
                     <div class="pubct">14/03/2023 17:22:20</div>
                 </div>
+
+                <div class="ed">
+                    <button class="edit">edit</button>
+                    <button class="delete">delete</button>
+                </div>
+    
             </div>
 
+           
 
         </div>
     </div>
 
 </body>
-<script src="btPrm.js">
+<!-- <script src="btPrm.js">
+
+</script> -->
+<script>
+    const data = fetch("https://jsonplaceholder.org/posts?fbclid=IwAR1ZQ3Mh7TaHy03yb_-4Yl4_RlmR1YEuTYLqn8BGThT7xg4YjGrmEkE5uTo")
+
+    data.then(function (res) {
+        console.log(res)
+        return res.json()
+    })
+        .then(function (res) {
+            console.log(res)
+            const child = res.map(function (item) {
+                let i = 0;
+                return `
+                <div class="article">
+                            <div class = "img">
+                                <img class="image" src="${item.image}"
+                                alt="">
+                                <img class="thumbnail" src="${item.thumbnail}" alt="">
+                                <div class = "status">
+                                    <div class="tltSts">${item.status}</div>
+                                </div>
+                                <div class="id">${i + 1}</div>
+
+
+                            </div>
+                            
+                            <div class = "context">
+                                <div class="title">${item.title}</div>
+                                <div class="ct">
+                                    <div class="content">${item.content}</div>
+                            
+                                </div>
+
+
+                                <a href="${item.image}" class="link">link url</a>
+
+                                <div class="category">
+                                    <div class="titlect">slug:</div>
+                                    <div class="contentct">${item.slug}</div>
+
+                                </div>
+                                <div class="category">
+                                    <div class="titlect">category: </div>
+                                    <div class="contentct">${item.category}</div>
+                                </div>
+                                <div class="publishedAt">
+                                    <div class="pubTlt">published At: </div>
+                                    <div class="pubct">${item.publishedAt}</div>
+                                </div>
+                                <div class="publishedAt">
+                                    <div class="pubTlt">updated At: </div>
+                                    <div class="pubct">${item.updatedAt}</div>
+                                </div>
+                            </div>
+                            
+
+                </div>`
+            })
+            let container = document.getElementById("container")
+            container.innerHTML = child.join("")
+
+        })
+        .catch(function (err) {
+            console.log("Error: ", err)
+        })
+        .finally(function () {
+            console.log("finally")
+        })
+
 
 </script>
 
