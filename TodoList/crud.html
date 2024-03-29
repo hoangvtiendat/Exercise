@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,100..900;1,100..900&family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+<style>
+    .header {
+        width: 100%;
+        height: 50px;
+        background-color: rgb(180, 177, 177);
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+        border-radius: 5px;
+    }
+
+    #container {
+        display: flex;
+        justify-content: start;
+        flex-wrap: wrap;
+
+
+    }
+
+
+    .card {
+        margin: 5px;
+        border: 1px solid rgb(180, 177, 177);
+        width: 220px;
+        height: 170px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5px 0;
+        border-radius: 5px;
+        background-color: rgb(170, 170, 170);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.525);
+        /* border: 0.2px solid black; */
+
+
+    }
+
+    .custom {
+        box-sizing: border-box;
+        border: 1px solid rgb(217, 214, 214);
+        width: calc(100% - 20px);
+        height: calc(100% /3.5);
+        margin: 0 10px;
+        display: flex;
+        /* justify-content: space-between; */
+        align-items: center;
+        border-radius: 5px;
+        margin: 2.5px 0;
+        overflow: hidden;
+
+
+    }
+
+    .custom1 {
+        box-sizing: border-box;
+        border: 1px solid rgb(217, 214, 214);
+        background-color: #fff;
+        width: calc(100% - 20px);
+        height: calc(100% /3.5);
+        margin: 0 10px;
+        display: flex;
+        /* justify-content: space-between; */
+        align-items: center;
+        border-radius: 5px;
+        margin: 2.5px 0;
+        position: relative;
+
+
+    }
+
+    .title {
+        margin-left: 10px;
+        font-family: "Roboto Flex", sans-serif;
+        font-size: 13px;
+    }
+
+    .icon {
+        margin-left: 5px;
+    }
+
+    .crt {
+        width: 100px;
+        height: 40px;
+        border-radius: 5px;
+        border: none;
+        background-color: rgb(231, 231, 231);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.811);
+        margin-left: 10px;
+        cursor: pointer;
+    }
+
+    button:active {
+        background-color: rgb(170, 170, 170);
+    }
+
+    .active {
+        width: calc(100% - 100px);
+        display: flex;
+        justify-content: space-between;
+
+        margin: 5px 0;
+    }
+
+    .btn {
+        width: 50px;
+        height: 30px;
+        border: none;
+        border-radius: 5px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.493);
+        margin-top: 5px;
+    }
+
+    .boxcrt {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(39, 39, 39, 0.644);
+        display: none;
+
+    }
+
+    .box {
+        background-color: rgb(180, 177, 177);
+        width: 250px;
+        height: 170px;
+        border-radius: 7px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.581);
+        position: relative;
+    }
+
+    .txt {
+        height: calc(100% - 10px);
+        width: 100%;
+        border: none;
+        outline: none;
+
+    }
+
+    .err {
+        position: absolute;
+        bottom: 0px;
+        left: 32px;
+        font-size: 12px;
+        font-family: "Roboto";
+        color: rgb(202, 5, 5);
+    }
+
+    .add {
+        border: none;
+        margin: 5px 0;
+        border-radius: 3px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.46);
+        display: none;
+    }
+
+    .update {
+        width: 70px;
+        border: none;
+        margin: 5px 0;
+        border-radius: 3px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.46);
+    }
+
+    .headerBox {
+        width: 100%;
+        height: 30px;
+        background-color: black;
+        border-radius: 5px 0;
+        position: relative;
+        justify-content: center;
+    }
+
+    .exit {
+        width: 20px;
+        height: calc(100% - 2px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        right: 1px;
+        top: 0px;
+        border: none;
+        background-color: rgb(237, 59, 59);
+        border-radius: 2px;
+
+    }
+
+    .id {
+        font-family: "Roboto";
+        font-size: 10px;
+    }
+
+    .fix {
+        font-family: "Roboto";
+        margin-left: 20px;
+        display: flex;
+        flex-direction: row;
+        display: none;
+    }
+</style>
+
+<body onload="render()">
+    <div class="header">
+        <button onclick="create()" class="crt">create</button>
+        <div class="fix">
+            <div class="fixing">Fixing ID: </div>
+            <div class="idFix">0</div>
+        </div>
+    </div>
+    <div id="container">
+        <div class="card">
+            <div class="name custom">
+                <div class="icon iconname material-symbols-outlined">person</div>
+
+                <div class="titlename title">hoang van tien dat</div>
+            </div>
+            <div class="email custom">
+                <div class="icon iconemail material-symbols-outlined">
+                    mail
+                </div>
+                <div class="titleemail title">hngvtdat010@gmail.com</div>
+            </div>
+            <div class="address custom">
+                <div class="icon iconaddress material-symbols-outlined">home</div>
+
+                <div class="titleaddress title">Quang Tri</div>
+            </div>
+
+            <div class="active">
+                <button class="edit btn">edit</button>
+                <button class="delete btn">delete</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="boxcrt">
+        <div class="box">
+            <div class="headerBox">
+                <button onclick="exit()" class="exit">X</button>
+            </div>
+            <div class="name custom1">
+                <div class="icon iconname material-symbols-outlined">person</div>
+                <input id="name" class="txt textname" type="text">
+                <div class="err"></div>
+            </div>
+            <div class="email custom1">
+                <div class="icon iconemail material-symbols-outlined">mail</div>
+                <input id="email" class="txt texteml" type="text">
+                <div class="err"></div>
+
+
+            </div>
+            <div class="address custom1">
+                <div class="icon iconaddress material-symbols-outlined">home</div>
+                <input id="address" class="txt textadr" type="text">
+                <div class="err"></div>
+            </div>
+
+            <button onclick="addNew()" class="add">Add New</button>
+            <button onclick="update()" class="update">Update</button>
+
+
+        </div>
+    </div>
+
+</body>
+<script>
+
+
+    let boxElement = document.querySelector(".box");
+    let list;
+
+    function validated() {
+        let txtElement = boxElement.querySelectorAll(".txt");
+        // console.log(txtElement)
+
+        for (let i = 0; i < txtElement.length; i++) {
+            if (txtElement[i].value.trim() === "") {
+                txtElement[i].parentElement.querySelector(".err").innerText = `Please enter your ${txtElement[i].id}`;
+            } else {
+                txtElement[i].parentElement.querySelector(".err").innerText = ``
+
+            }
+        }
+    }
+
+    function exit() {
+        document.querySelector(".boxcrt").style.display = "none";
+        document.querySelector(".fix").style.display = "none";
+
+    }
+
+    function create() {
+        document.querySelector(".boxcrt").style.display = "flex";
+        document.querySelector(".update").style.display = "none";
+        document.querySelector(".add").style.display = "inline-block";
+
+    }
+
+
+    function render() {
+        list = localStorage.getItem("list") ? JSON.parse(localStorage.getItem("list")) : [];
+
+
+        let render = list.map(function (value, index) {
+            console.log("render", value.name);
+            console.log(value.email);
+            console.log(value.address);
+
+            return `
+            <div class="card">
+                <div class = "id">${index + 1}</div>
+                <div class="name custom">
+                    <div class="icon iconname material-symbols-outlined">person</div>
+
+                    <div  class="titlename title">${value.name}</div>
+                </div>
+                <div class="email custom">
+                    <div class="icon iconemail material-symbols-outlined">mail</div>
+                    <div  class="titleemail title">${value.email}</div>
+                </div>
+                <div class="address custom">
+                    <div class="icon iconaddress material-symbols-outlined">home</div>
+
+                    <div  class="titleaddress title">${value.address}</div>
+                </div>
+
+                <div class="active">
+                    <button onclick = "edit(${index})"   class="edit btn">edit</button>
+                    <button onclick = "deletee(${index})" class="delete btn">delete</button>
+                </div>
+            </div>
+            `
+
+        });
+        let container = document.getElementById("container");
+        container.innerHTML = render.join("");
+
+
+    }
+    function addNew() {
+        validated();
+        let errElement = boxElement.querySelectorAll(".err");
+        let arrErr = [];
+
+        console.log("err: ", errElement);
+        for (let i = 0; i < errElement.length; i++) {
+            arrErr.push(errElement[i].innerText);
+        }
+        console.log(arrErr);
+        let checkVal = arrErr.every(value => value === "");
+
+        if (checkVal) {
+            console.log("ok")
+            let name = document.querySelector("#name").value;
+            let email = document.querySelector("#email").value;
+            let address = document.querySelector("#address").value;
+
+            console.log("name:", name)
+            console.log("name:", email)
+            console.log("name:", address)
+
+
+            list = localStorage.getItem("list") ? JSON.parse(localStorage.getItem("list")) : [];
+            // list= [];
+            list.push({
+                name: name,
+                email: email,
+                address: address
+            })
+
+            localStorage.setItem("list", JSON.stringify(list));
+
+            document.querySelector(".boxcrt").style.display = "none"
+            document.getElementById("name").value = "";
+            document.getElementById("email").value = "";
+            document.getElementById("address").value = "";
+            render();
+
+
+        }
+        else {
+            console.log("not ok")
+        }
+
+    }
+
+
+    function deletee(index) {
+        console.log(index);
+        // list = localStorage.getItem("list") ? JSON.parse(localStorage.getItem("list")) : [];
+        list.splice(index, 1);
+        console.log("done")
+        localStorage.setItem("list", JSON.stringify(list));
+        render();
+    }
+
+    function edit(index) {
+        console.log(index);
+        document.querySelector(".boxcrt").style.display = "flex";
+        document.querySelector(".add").style.display = "none";
+        document.querySelector(".update").style.display = "inline-block";
+        list = localStorage.getItem("list") ? JSON.parse(localStorage.getItem("list")) : [];
+
+        document.getElementById("name").value = list[index].name;
+        document.getElementById("email").value = list[index].email;
+        document.getElementById("address").value = list[index].address;
+        console.log(list[index].name, 'name');
+        console.log(document.getElementById("name").value, 'name');
+        document.querySelector(".fix").style.display = "flex";
+        document.querySelector(".idFix").textContent = index + 1;
+    }
+
+    function update() {
+        let index = (document.querySelector(".idFix").innerText) - 1;
+        console.log("index: ", index);
+
+        list = localStorage.getItem("list") ? JSON.parse(localStorage.getItem("list")) : [];
+
+        list[index].name = document.getElementById("name").value;
+        list[index].email = document.getElementById("email").value;
+        list[index].address = document.getElementById("address").value;
+
+        console.log("name: ", list[index].name);
+
+        localStorage.setItem("list", JSON.stringify(list));
+        render();
+        document.getElementById("name").value = "";
+        document.getElementById("email").value = "";
+        document.getElementById("address").value = "";
+        document.querySelector(".boxcrt").style.display = "none";
+        document.querySelector(".fix").style.display = "none";
+
+
+
+    }
+
+</script>
+
+</html>

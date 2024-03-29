@@ -41,6 +41,7 @@
                 </div>
             </div>
             <button onclick="submit()" class="btnSubmit">Submit</button>
+            <button onclick="update()" class="btnUpdate">Update</button>
         </div>
     </div>
     <div class="header">
@@ -54,15 +55,16 @@
 
             <div class="titleTodo">
                 <div class="tltTodo">Todo</div>
-                <div class="numberTodo">3</div>
+                <div id="numberTodo" class="numberTodo">0</div>
             </div>
             <div class="lineTodo"></div>
-            <div id="listbox" class="listbox">
+            <div id="listboxTodo" class="listbox">
                 <div class="box">
 
                     <div class="function">
                         <button onclick="edit()" class="edit"></button>
                         <button class="delete"></button>
+                        <input type="text" class="indexBox" name="" id="">
                     </div>
                     <div class="linkBox">Marketing</div>
                     <div class="titleBox">Write SEO article for new product</div>
@@ -84,48 +86,14 @@
 
 
 
-
         <div id="doing" class=" todo doing">
 
             <div class="titleDoing">
                 <div class="tltTodo tltDoing">Doing</div>
-                <div class="numberTodo numberDoing">3</div>
+                <div id="numberDoing" class="numberTodo numberDoing">3</div>
             </div>
             <div class="lineDoing"></div>
-            <div class="listbox">
-                <div class="box">
-                    <div class="function">
-                        <button class="edit"></button>
-                        <button class="delete"></button>
-                    </div>
-                    <div class="linkBox ">Marketing</div>
-                    <div class="titleBox ">Write SEO article for new product</div>
-                    <div class="lineBox "></div>
-                    <div class="contentBox ">This is an existential moment for effective altruism and the
-                        rationalist community writ-large</div>
-
-                    <div class="timeBox">
-                        <img src="clock.png" alt="">
-                        <div class="time">June 30, 2022</div>
-                    </div>
-                </div>
-                <div class="box">
-
-                    <div class="function">
-                        <button onclick="edit()" class="edit"></button>
-                        <button class="delete"></button>
-                    </div>
-                    <div class="linkBox">Marketing</div>
-                    <div class="titleBox">Write SEO article for new product</div>
-                    <div class="lineBox"></div>
-                    <div class="contentBox">This is an existential moment for effective altruism and the rationalist
-                        community writ-large</div>
-
-                    <div class="timeBox">
-                        <img src="clock.png" alt="">
-                        <div class="time">June 30, 2022</div>
-                    </div>
-                </div>
+            <div id="listboxDoing" class="listbox">
 
             </div>
 
@@ -140,27 +108,11 @@
 
             <div class="titleCompleted">
                 <div class="tltTodo">Completed</div>
-                <div class="numberTodo numberCompleted">3</div>
+                <div id="numberCompleted" class="numberTodo numberCompleted">3</div>
             </div>
             <div class="lineCompleted"></div>
-            <div class="listbox">
-                <div class="box">
-                    <div class="function">
-                        <button class="edit"></button>
-                        <button class="delete"></button>
-                    </div>
-                    <div class="linkBox">Marketing</div>
-                    <div class="titleBox">Write SEO article for new product</div>
-                    <div class="lineBox"></div>
-                    <div class="contentBox">This is an existential moment for effective altruism and the rationalist
-                        community
-                        writ-large</div>
+            <div id="listboxCompleted" class="listbox">
 
-                    <div class="timeBox">
-                        <img src="clock.png" alt="">
-                        <div class="time">June 30, 2022</div>
-                    </div>
-                </div>
 
             </div>
 
@@ -172,26 +124,11 @@
 
             <div class="titleBlocked">
                 <div class="tltTodo">Blocked</div>
-                <div class="numberTodo numberBlocked">3</div>
+                <div id="numberBlocked" class="numberTodo numberBlocked">3</div>
             </div>
             <div class="lineBlocked"></div>
-            <div class="listbox">
-                <div class="box">
-                    <div class="function">
-                        <button class="edit"></button>
-                        <button class="delete"></button>
-                    </div>
-                    <div class="linkBox">Marketing</div>
-                    <div class="titleBox ">Write SEO article for new product</div>
-                    <div class="lineBox"></div>
-                    <div class="contentBox">This is an existential moment for effective altruism and the rationalist
-                        community writ-large</div>
+            <div id="listboxBlocked" class="listbox">
 
-                    <div class="timeBox">
-                        <img src="clock.png" alt="">
-                        <div class="time">June 30, 2022</div>
-                    </div>
-                </div>
 
             </div>
 
@@ -202,130 +139,7 @@
     </div>
 </body>
 
-<!-- <script src="todoList.js"></script> -->
-
-<script>
-    function exit() {
-        document.querySelector(".containerAddNew").style.display = "none"
-    }
-
-    function newTask() {
-        document.querySelector(".containerAddNew").style.display = "flex"
-        document.querySelector(".checkTodo").style.display = "none";
-        document.querySelector(".titleBoxAdd").style.display = "inline-block";
-        document.querySelector(".titleBoxEdit").style.display = "none"
-    }
-
-    function edit() {
-        document.querySelector(".containerAddNew").style.display = "flex"
-        document.querySelector(".checkTodo").style.display = "flex";
-        document.querySelector(".titleBoxAdd").style.display = "none";
-        document.querySelector(".titleBoxEdit").style.display = "inline-block"
-    }
-
-    function validated() {
-        let boxElement = document.querySelector(".boxAdd");
-        let inpElement = boxElement.querySelectorAll(".inpBoxAdd");
-
-        // console.log(inpElement);
-
-        for (let i = 0; i < inpElement.length; i++) {
-            if (inpElement[i].value.trim() === "") {
-                // console.log("err")
-                inpElement[i].style.border = "1px solid red";
-            }
-            else {
-                inpElement[i].style.border = "1px solid green";
-            }
-        }
-    }
-    var list;
-
-    function render() {
-        list = localStorage.getItem("list") ? JSON.parse(localStorage.getItem("list")) : [];
-
-        let render = list.map(function (value, index) {
-            return `
-       
-                <div class="box">
-
-                    <div class="function">
-                        <button onclick="edit()" class="edit"></button>
-                        <button class="delete"></button>
-                    </div>
-                    <div class="linkBox">${value.link}</div>
-                    <div class="titleBox">${value.title}</div>
-                    <div class="lineBox"></div>
-                    <div class="contentBox">${value.content}</div>
-
-                    <div class="timeBox">
-                        <img src="clock.png" alt="">
-                        <div class="time">June 30, 2022
-                    </div>
-                </div>
-        
-    `
-
-
-        });
-
-        let listbox = document.getElementById("listbox");
-        listbox.innerHTML = render.join("");
-
-
-    }
-    function submit() {
-        let checkVal = false
-        let boxElement = document.querySelector(".boxAdd");
-        let inpElement = boxElement.querySelectorAll(".inpBoxAdd");
-        validated();
-        let dem = 0;
-        for (let i = 0; i < inpElement.length; i++) {
-            // console.log("check: ", inpElement[i].style.border)
-            if (inpElement[i].style.border === "1px solid green") {
-                dem = dem + 1;
-                // console.log("green: ", dem)
-
-            }
-
-        }
-
-        if (dem === inpElement.length) {
-
-            checkVal = true;
-        }
-        else {
-            dem = 0;
-            console.log("errr")
-        }
-        // console.log("dem: ", dem)
-
-        if (checkVal) {
-            // console.log("ok")
-            let link = document.getElementById("link").value;
-            let title = document.getElementById("title").value;
-            let content = document.getElementById("content").value;
-
-            console.log("link: ", link);
-            console.log("title: ", title);
-            console.log("content: ", content);
-
-            list = localStorage.getItem("list") ? JSON.parse(localStorage.getItem("list")) : [];
-
-            list.push(
-                {
-                    link: link,
-                    title: title,
-                    content: content
-                });
-            localStorage.setItem("list", JSON.stringify(list));
-            render();
-        }
-
-    }
-
-
-</script>
+<script src="todoList.js"></script>
 
 
 </html>

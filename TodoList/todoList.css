@@ -73,6 +73,14 @@ body {
     cursor: pointer;
 }
 
+.btnUpdate {
+    width: calc(100% - 100px);
+    box-sizing: border-box;
+    margin-top: 5px;
+    cursor: pointer;
+    display: none ;
+}
+
 .inpBoxAdd {
     width: calc(100% / 1.1);
     box-sizing: border-box;
@@ -164,8 +172,7 @@ body {
 
 }
 
-
-.listbox::after {
+.listboxTodo::after {
     content: '';
     position: absolute;
     width: 100%;
@@ -187,6 +194,8 @@ body {
     border-radius: 4px;
 }
 
+
+
 .tltTodo {
     color: #fff;
 }
@@ -200,7 +209,6 @@ body {
     color: rgb(121, 119, 119);
     font-size: 25px;
     cursor: pointer;
-
 }
 
 .numberTodo {
@@ -432,7 +440,9 @@ body {
     display: flex;
     align-items: center;
 }
-
+.indexBox{
+    /* display: none; */
+}
 @media only screen and (max-width: 900px) {
     body {
         overflow: auto;
@@ -440,7 +450,7 @@ body {
 
     }
 
-    #container {
+    #container {    
         flex-direction: column;
         /* justify-content: center; */
         /* background-color: #00a6da; */
