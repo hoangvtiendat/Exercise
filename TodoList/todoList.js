@@ -1,10 +1,7 @@
 
-
-
-
-
 function render() {
     // console.log("ok")
+
 
 
 
@@ -16,27 +13,27 @@ function render() {
     let renderTodo = listTodo.map(function (value, index) {
 
         return `
-    
-            <div class="box">
+        
+                <div class="box">
 
-            <div class="function">
-                <button onclick="edit(${index})" class="edit"></button>
-                <button onclick="deletee(${index})" class="delete"></button>
-                <input type="text" class="indexBox" name="" id="">
+                <div class="function">
+                    <button onclick="edit(${index}, 'todo')" class="edit"></button>
+                    <button onclick="deletee(${index}, 'todo')" class="delete"></button>
+                    <input type="text" class="indexBox" name="" id="">
 
+                </div>
+                <div class="linkBox">${value.link}</div>
+                <div class="titleBox">${value.title}</div>
+                <div class="lineBox"></div>
+                <div class="contentBox">${value.content}</div>
+
+                <div class="timeBox">
+                    <img src="clock.png" alt="">
+                    <div class="time">June 30, 2022</div>
+                </div>
             </div>
-            <div class="linkBox">${value.link}</div>
-            <div class="titleBox">${value.title}</div>
-            <div class="lineBox"></div>
-            <div class="contentBox">${value.content}</div>
 
-            <div class="timeBox">
-                <img src="clock.png" alt="">
-                <div class="time">June 30, 2022</div>
-            </div>
-        </div>
-
-            `
+                `
 
     });
     let listboxTodo = document.getElementById("listboxTodo");
@@ -47,27 +44,27 @@ function render() {
     let renderDoing = listDoing.map(function (value, index) {
 
         return `
-    
-            <div class="box">
+        
+                <div class="box">
 
-            <div class="function">
-                <button onclick="edit(${index})" class="edit"></button>
-                <button onclick="deletee(${index})" class="delete"></button>
-                <input type="text" class="indexBox" name="" id="">
+                <div class="function">
+                    <button onclick="edit(${index}, 'doing')" class="edit"></button>
+                    <button onclick="deletee(${index}, 'doing')" class="delete"></button>
+                    <input type="text" class="indexBox" name="" id="">
 
+                </div>
+                <div class="linkBox">${value.link}</div>
+                <div class="titleBox">${value.title}</div>
+                <div class="lineBox"></div>
+                <div class="contentBox">${value.content}</div>
+
+                <div class="timeBox">
+                    <img src="clock.png" alt="">
+                    <div class="time">June 30, 2022</div>
+                </div>
             </div>
-            <div class="linkBox">${value.link}</div>
-            <div class="titleBox">${value.title}</div>
-            <div class="lineBox"></div>
-            <div class="contentBox">${value.content}</div>
 
-            <div class="timeBox">
-                <img src="clock.png" alt="">
-                <div class="time">June 30, 2022</div>
-            </div>
-        </div>
-
-            `
+                `
 
     });
     let listboxDoing = document.getElementById("listboxDoing");
@@ -77,27 +74,27 @@ function render() {
     let renderCompleted = listCompleted.map(function (value, index) {
 
         return `
-    
-            <div class="box">
+        
+                <div class="box">
 
-            <div class="function">
-                <button onclick="edit(${index})" class="edit"></button>
-                <button onclick="deletee(${index})" class="delete"></button>
-                <input type="text" class="indexBox" name="" id="">
+                <div class="function">
+                    <button onclick="edit(${index}, 'completed')" class="edit"></button>
+                    <button onclick="deletee(${index}, 'completed')" class="delete"></button>
+                    <input type="text" class="indexBox" name="" id="">
 
+                </div>
+                <div class="linkBox">${value.link}</div>
+                <div class="titleBox">${value.title}</div>
+                <div class="lineBox"></div>
+                <div class="contentBox">${value.content}</div>
+
+                <div class="timeBox">
+                    <img src="clock.png" alt="">
+                    <div class="time">June 30, 2022</div>
+                </div>
             </div>
-            <div class="linkBox">${value.link}</div>
-            <div class="titleBox">${value.title}</div>
-            <div class="lineBox"></div>
-            <div class="contentBox">${value.content}</div>
 
-            <div class="timeBox">
-                <img src="clock.png" alt="">
-                <div class="time">June 30, 2022</div>
-            </div>
-        </div>
-
-            `
+                `
 
     });
     let listboxCompleted = document.getElementById("listboxCompleted");
@@ -107,36 +104,44 @@ function render() {
     let renderBlocked = listBlocked.map(function (value, index) {
 
         return `
-    
-            <div class="box">
+        
+                <div class="box">
 
-            <div class="function">
-                <button onclick="edit(${index})" class="edit"></button>
-                <button onclick="deletee(${index})" class="delete"></button>
-                <input type="text" class="indexBox" name="" id="">
+                <div class="function">
+                    <button onclick="edit(${index}, 'blocked')" class="edit"></button>
+                    <button onclick="deletee(${index}, 'blocked')" class="delete"></button>
+                    <input type="text" class="indexBox" name="" id="">
 
+                </div>
+                <div class="linkBox">${value.link}</div>
+                <div class="titleBox">${value.title}</div>
+                <div class="lineBox"></div>
+                <div class="contentBox">${value.content}</div>
+
+                <div class="timeBox">
+                    <img src="clock.png" alt="">
+                    <div class="time">June 30, 2022</div>
+                </div>
             </div>
-            <div class="linkBox">${value.link}</div>
-            <div class="titleBox">${value.title}</div>
-            <div class="lineBox"></div>
-            <div class="contentBox">${value.content}</div>
 
-            <div class="timeBox">
-                <img src="clock.png" alt="">
-                <div class="time">June 30, 2022</div>
-            </div>
-        </div>
-
-            `
+                `
 
     });
     let listboxBlocked = document.getElementById("listboxBlocked");
     listboxBlocked.innerHTML = renderBlocked.join("");
+    document.getElementById("numberTodo").innerText = listTodo.length;
+    document.getElementById("numberDoing").innerText = listDoing.length;
+    document.getElementById("numberCompleted").innerText = listCompleted.length;
+    document.getElementById("numberBlocked").innerText = listBlocked.length;
 }
 
 
 function exit() {
-    document.querySelector(".containerAddNew").style.display = "none"
+    document.querySelector(".containerAddNew").style.display = "none";
+    document.getElementById("link").value = "";
+    document.getElementById("title").value = "";
+    document.getElementById("content").value = "";
+
 }
 
 function newTask() {
@@ -177,13 +182,48 @@ listCompleted = localStorage.getItem("listCompleted") ? JSON.parse(localStorage.
 listBlocked = localStorage.getItem("listBlocked") ? JSON.parse(localStorage.getItem("listBlocked")) : [];
 
 
+var tyleList;
+
+
+function edit(index, type) {
+
+    typeList = type
+    console.log("typeList: ", typeList)
+    if (type === 'todo') {
+        document.getElementById("ckTodo").checked = true;
+
+        document.getElementById("link").value = listTodo[index].link;
+        document.getElementById("title").value = listTodo[index].title;
+        document.getElementById("content").value = listTodo[index].content;
 
 
 
-function edit(index) {
+    }
+    else if (type === 'doing') {
+        document.getElementById("ckDoing").checked = true;
+        document.getElementById("link").value = listDoing[index].link;
+        document.getElementById("title").value = listDoing[index].title;
+        document.getElementById("content").value = listDoing[index].content;
+    }
+    else if (type === 'completed') {
+        document.getElementById("ckCompleted").checked = true;
+        document.getElementById("link").value = listCompleted[index].link;
+        document.getElementById("title").value = listCompleted[index].title;
+        document.getElementById("content").value = listCompleted[index].content;
+    }
+    else if (type === 'blocked') {
+        document.getElementById("ckTodo").checked = false;
+        document.getElementById("ckDoing").checked = false;
+        document.getElementById("ckCompleted").checked = false;
+        document.getElementById("ckBlocked").checked = true;
+        document.getElementById("link").value = listBlocked[index].link;
+        document.getElementById("title").value = listBlocked[index].title;
+        document.getElementById("content").value = listBlocked[index].content;
+    }
 
-
-    console.log("okoko")
+    else {
+        console.log("err ck")
+    }
     document.querySelector(".containerAddNew").style.display = "flex"
     document.querySelector(".checkTodo").style.display = "flex";
     document.querySelector(".titleBoxAdd").style.display = "none";
@@ -192,35 +232,91 @@ function edit(index) {
     document.querySelector(".btnSubmit").style.display = " none"
 
 
-    document.getElementById("link").value = listTodo[index].link;
-    document.getElementById("title").value = listTodo[index].title;
-    document.getElementById("content").value = listTodo[index].content;
+
 
     console.log("link:  ", listTodo[index].link);
 
-    document.getElementById("ckTodo").checked = true;
+
     document.querySelector(".indexBox").value = index;
-    console.log("index: ", index)
+    // console.log("index: ", index)
+    // console.log("type: ", typeList);
+    // console.log("type: ", type);
+
 
 
 }
 
 function update() {
+    let index = document.querySelector(".indexBox").value;
+    // deletee(index, typeList);
+    console.log("type: ", typeList);
     let link = document.getElementById("link").value;
     let title = document.getElementById("title").value;
     let content = document.getElementById("content").value;
-    listTodo = localStorage.getItem("listTodo") ? JSON.parse(localStorage.getItem("listTodo")) : [];
-    let index = document.querySelector(".indexBox").value;
-    // console.log("index: ", index);
-    listTodo[index].link = document.getElementById("link").value;
-    listTodo[index].title = document.getElementById("title").value;
-    listTodo[index].content = document.getElementById("content").value;
 
+
+
+    if (typeList === 'todo') {
+
+        listTodo.splice(index, 1);
+        localStorage.setItem("listTodo", JSON.stringify(listTodo));
+
+        listTodo.push({
+            link: link,
+            title: title,
+            content: content
+        });
+
+
+
+    }
+    else if (typeList === 'doing') {
+        listDoing.splice(index, 1);
+        localStorage.setItem("listDoing", JSON.stringify(listDoing));
+
+
+        listDoing.push({
+            link: link,
+            title: title,
+            content: content
+        });
+
+
+    }
+    else if (typeList === 'completed') {
+        listCompleted.splice(index, 1);
+        localStorage.setItem("listCompleted", JSON.stringify(listCompleted));
+
+        listCompleted.push({
+            link: link,
+            title: title,
+            content: content
+        });
+
+    }
+    else if (typeList === 'blocked') {
+        listBlocked.splice(index, 1);
+        localStorage.setItem("listBlocked", JSON.stringify(listBlocked));
+
+        listBlocked.push({
+            link: link,
+            title: title,
+            content: content
+        });
+    }
+
+    else {
+        console.log("err")
+    }
+
+
+
+    // console.log("index: ", index);
+
+    document.querySelector(".containerAddNew").style.display = "none";
     document.getElementById("link").value = "";
     document.getElementById("title").value = "";
     document.getElementById("content").value = "";
-    document.querySelector(".containerAddNew").style.display = "none";
-
     let radioButton = document.querySelectorAll('input[type="radio"][name="radio"]');
     let selectedRadio = null;
 
@@ -233,6 +329,8 @@ function update() {
             return;
         }
     });
+
+
 
     console.log("slt: ", selectedRadio.id);
 
@@ -257,9 +355,8 @@ function update() {
                 content: content
             });
         localStorage.setItem("listDoing", JSON.stringify(listDoing));
+
     }
-
-
     else if (selectedRadio && selectedRadio.id === "ckCompleted") {
 
 
@@ -283,18 +380,45 @@ function update() {
             });
         localStorage.setItem("listBlocked", JSON.stringify(listBlocked));
     }
-
-
-
     else {
         alert("ERROR")
     }
-
     render();
 }
 
-function deletee(index) {
+function deletee(index, type) {
+    if (type === 'todo') {
 
+        listTodo.splice(index, 1);
+        localStorage.setItem("listTodo", JSON.stringify(listTodo));
+
+
+
+    }
+    else if (type === 'doing') {
+        listDoing.splice(index, 1);
+        localStorage.setItem("listDoing", JSON.stringify(listDoing));
+
+
+    }
+    else if (type === 'completed') {
+        listCompleted.splice(index, 1);
+        localStorage.setItem("listCompleted", JSON.stringify(listCompleted));
+
+
+    }
+    else if (type === 'blocked') {
+        listBlocked.splice(index, 1);
+        localStorage.setItem("listBlocked", JSON.stringify(listBlocked));
+
+
+    }
+
+    else {
+        console.log("err")
+    }
+
+    render();
 }
 
 
@@ -348,7 +472,7 @@ function submit() {
         document.querySelector("#link").value = "";
         document.querySelector("#title").value = "";
         document.querySelector("#content").value = "";
-        document.getElementById("ckTodo").checked = true;
+
 
         document.getElementById("numberTodo").innerText = listTodo.length;
 
