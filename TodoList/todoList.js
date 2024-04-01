@@ -182,12 +182,12 @@ listCompleted = localStorage.getItem("listCompleted") ? JSON.parse(localStorage.
 listBlocked = localStorage.getItem("listBlocked") ? JSON.parse(localStorage.getItem("listBlocked")) : [];
 
 
-var tyleList;
+var typeList;
 
 
 function edit(index, type) {
 
-    typeList = type
+    typeList = type;
     console.log("typeList: ", typeList)
     if (type === 'todo') {
         document.getElementById("ckTodo").checked = true;
@@ -247,8 +247,11 @@ function edit(index, type) {
 }
 
 function update() {
+
     let index = document.querySelector(".indexBox").value;
-    // deletee(index, typeList);
+    deletee(index, typeList);
+
+    
     console.log("type: ", typeList);
     let link = document.getElementById("link").value;
     let title = document.getElementById("title").value;
@@ -256,58 +259,47 @@ function update() {
 
 
 
-    if (typeList === 'todo') {
-
-        listTodo.splice(index, 1);
-        localStorage.setItem("listTodo", JSON.stringify(listTodo));
-
-        listTodo.push({
-            link: link,
-            title: title,
-            content: content
-        });
+    // if (typeList === 'todo') {
+    //     listTodo.push({
+    //         link: link,
+    //         title: title,
+    //         content: content
+    //     });
+    // }
+    // else if (typeList === 'doing') {
 
 
 
-    }
-    else if (typeList === 'doing') {
-        listDoing.splice(index, 1);
-        localStorage.setItem("listDoing", JSON.stringify(listDoing));
+    //     listDoing.push({
+    //         link: link,
+    //         title: title,
+    //         content: content
+    //     });
 
 
-        listDoing.push({
-            link: link,
-            title: title,
-            content: content
-        });
+    // }
+    // else if (typeList === 'completed') {
+
+    //     listCompleted.push({
+    //         link: link,
+    //         title: title,
+    //         content: content
+    //     });
+
+    // }
+    // else if (typeList === 'blocked') {
 
 
-    }
-    else if (typeList === 'completed') {
-        listCompleted.splice(index, 1);
-        localStorage.setItem("listCompleted", JSON.stringify(listCompleted));
+    //     listBlocked.push({
+    //         link: link,
+    //         title: title,
+    //         content: content
+    //     });
+    // }
 
-        listCompleted.push({
-            link: link,
-            title: title,
-            content: content
-        });
-
-    }
-    else if (typeList === 'blocked') {
-        listBlocked.splice(index, 1);
-        localStorage.setItem("listBlocked", JSON.stringify(listBlocked));
-
-        listBlocked.push({
-            link: link,
-            title: title,
-            content: content
-        });
-    }
-
-    else {
-        console.log("err")
-    }
+    // else {
+    //     console.log("err")
+    // }
 
 
 
@@ -343,6 +335,7 @@ function update() {
                 content: content
             });
         localStorage.setItem("listTodo", JSON.stringify(listTodo));
+        console.log("radioTodo")
     }
 
     else if (selectedRadio && selectedRadio.id === "ckDoing") {
@@ -355,6 +348,8 @@ function update() {
                 content: content
             });
         localStorage.setItem("listDoing", JSON.stringify(listDoing));
+        console.log("radioDoing")
+
 
     }
     else if (selectedRadio && selectedRadio.id === "ckCompleted") {
@@ -367,6 +362,8 @@ function update() {
                 content: content
             });
         localStorage.setItem("listCompleted", JSON.stringify(listCompleted));
+        console.log("radioCompleted")
+
     }
 
     else if (selectedRadio && selectedRadio.id === "ckBlocked") {
@@ -379,6 +376,8 @@ function update() {
                 content: content
             });
         localStorage.setItem("listBlocked", JSON.stringify(listBlocked));
+        console.log("radioBlocked")
+
     }
     else {
         alert("ERROR")
@@ -417,7 +416,7 @@ function deletee(index, type) {
     else {
         console.log("err")
     }
-
+    console.log("xoa thanh cong")
     render();
 }
 
