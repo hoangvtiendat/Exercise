@@ -14,7 +14,7 @@ function render() {
 
         return `
         
-                <div class="box">
+                <div class="box"  draggable = "true">
 
                 <div class="function">
                     <button onclick="edit(${index}, 'todo')" class="edit"></button>
@@ -45,7 +45,7 @@ function render() {
 
         return `
         
-                <div class="box">
+                <div class="box"  draggable = "true">
 
                 <div class="function">
                     <button onclick="edit(${index}, 'doing')" class="edit"></button>
@@ -75,7 +75,7 @@ function render() {
 
         return `
         
-                <div class="box">
+                <div class="box"  draggable = "true">
 
                 <div class="function">
                     <button onclick="edit(${index}, 'completed')" class="edit"></button>
@@ -105,7 +105,7 @@ function render() {
 
         return `
         
-                <div class="box">
+                <div class="box" draggable = "true">
 
                 <div class="function">
                     <button onclick="edit(${index}, 'blocked')" class="edit"></button>
@@ -478,12 +478,9 @@ function submit() {
 
         console.log("lenght: ", listTodo.length);
         render();
-
-
-
     }
-
-
 }
+
+
 
 

@@ -125,10 +125,11 @@ body {
 }
 .headerr{
     position: fixed;
-    background-color: #aeadad;
+    background-color: #fff;
     width: 100%;
+    /* height: 30px; */
     z-index: 2;
-    border-radius: 10px;
+    border-radius: 7px;
 }
 .header {
     width: 100%;
@@ -145,8 +146,19 @@ body {
 .logoTask {
     width: 100px;
 }
+.newTask {
+    position: absolute;
+    bottom: 5px;
+    right: 10px;
+    border: none;
+    background-color: #fff;
+    color: rgb(121, 119, 119);
+    font-size: 25px;
+    cursor: pointer;
+}
 
 #container {
+    padding-top: 100px;
     width: 100%;
     display: flex;
     justify-content: space-around;
@@ -206,16 +218,7 @@ body {
     color: #fff;
 }
 
-.newTask {
-    position: absolute;
-    bottom: 5px;
-    right: 10px;
-    border: none;
-    background-color: #fff;
-    color: rgb(121, 119, 119);
-    font-size: 25px;
-    cursor: pointer;
-}
+
 
 .numberTodo {
     border-radius: 5px;
@@ -447,7 +450,7 @@ body {
     align-items: center;
 }
 .indexBox{
-    /* display: none; */
+    display: none;
 }
 @media only screen and (max-width: 900px) {
     body {
@@ -462,6 +465,7 @@ body {
         /* background-color: #00a6da; */
         align-items: center;
         width: 100%;
+        padding-top: 80px;
 
     }
 
