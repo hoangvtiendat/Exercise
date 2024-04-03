@@ -8,6 +8,145 @@ body {
 
 }
 
+.animation {
+    width: 100%;
+    height: 100%;
+    background-color: #90ddf4;
+    position: fixed;
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.logo {
+
+    width: 200px;
+    height: 200px;
+    /* border: 1px solid; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation: effect 8s ease-out;
+    /* display: none;   */
+
+}
+
+.anmlogo {
+    width: 50%;
+}
+
+.anmtitleLogo {
+    margin-top: 15px;
+    width: 60%;
+}
+
+.anmSlogan {
+    margin-top: 15px;
+    width: 100%;
+}
+
+@keyframes effect {
+    0% {
+        transform: translateY(7%) scale(2);
+        display: flex;
+        opacity: 1;
+        /* Bắt đầu với opacity là 1 */
+    }
+
+    5% {
+        transform: scale(2) translateY(0);
+        opacity: 1;
+        /* Giữ opacity là 1 trong khoảng thời gian chờ */
+    }
+
+    10% {
+        transform: scale(2);
+
+        display: flex;
+        transform: translateY(7%);
+        opacity: 1;
+        /* Bắt đầu với opacity là 1 */
+    }
+
+    15% {
+        transform: translateY(0);
+        opacity: 1;
+        /* Giữ opacity là 1 trong khoảng thời gian chờ */
+    }
+
+    20% {
+        display: flex;
+        transform: translateY(7%);
+        opacity: 1;
+        /* Bắt đầu với opacity là 1 */
+    }
+
+    25% {
+        transform: translateY(0);
+        opacity: 1;
+        /* Giữ opacity là 1 trong khoảng thời gian chờ */
+    }
+
+    30% {
+        display: flex;
+        transform: translateY(7%);
+        opacity: 1;
+        /* Bắt đầu với opacity là 1 */
+    }
+
+    35% {
+        transform: translateY(0);
+        opacity: 1;
+        /* Giữ opacity là 1 trong khoảng thời gian chờ */
+    }
+
+    40% {
+        display: flex;
+        transform: translateY(7%);
+        opacity: 1;
+        /* Bắt đầu với opacity là 1 */
+    }
+
+    45% {
+        transform: translateY(0);
+        opacity: 1;
+        /* Giữ opacity là 1 trong khoảng thời gian chờ */
+    }
+
+
+    50% {
+        transform: scale(0.4);
+        opacity: 1;
+        /* Giữ opacity là 1 trong khoảng thời gian chờ */
+    }
+
+    60% {
+        transform: translateX(-50%);
+        opacity: 1;
+        /* Giữ opacity là 1 trong khoảng thời gian chờ */
+    }
+
+    70% {
+
+        transform: scale(0.4);
+        opacity: 1;
+        /* Giữ opacity là 1 trong khoảng thời gian chờ */
+    }
+
+
+    100% {
+        /* transform: translateY(0); */
+        /* opacity: 0;  */
+        transform: scale(0.4);
+
+        display: none;
+        /* Phần tử biến mất khi kết thúc animation */
+    }
+}
+
 .containerAddNew {
     width: 100%;
     height: 100%;
@@ -36,7 +175,7 @@ body {
     /* width: calc(100% / 3 + 50px); */
 
     /* height: calc(100% / 4 + 30px); */
-    padding: 50px 20px ;
+    padding: 50px 20px;
     background-color: #fff;
     border-radius: 6px;
     display: flex;
@@ -78,7 +217,7 @@ body {
     box-sizing: border-box;
     margin-top: 5px;
     cursor: pointer;
-    display: none ;
+    display: none;
 }
 
 .inpBoxAdd {
@@ -123,7 +262,8 @@ body {
 .ck {
     font-size: 5px;
 }
-.headerr{
+
+.headerr {
     position: fixed;
     background-color: #fff;
     width: 100%;
@@ -131,6 +271,7 @@ body {
     z-index: 2;
     border-radius: 7px;
 }
+
 .header {
     width: 100%;
     position: relative;
@@ -146,6 +287,7 @@ body {
 .logoTask {
     width: 100px;
 }
+
 .newTask {
     position: absolute;
     bottom: 5px;
@@ -449,9 +591,11 @@ body {
     display: flex;
     align-items: center;
 }
-.indexBox{
+
+.indexBox {
     display: none;
 }
+
 @media only screen and (max-width: 900px) {
     body {
         overflow: auto;
@@ -459,7 +603,7 @@ body {
 
     }
 
-    #container {    
+    #container {
         flex-direction: column;
         /* justify-content: center; */
         /* background-color: #00a6da; */
