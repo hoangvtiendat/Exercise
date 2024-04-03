@@ -11,18 +11,20 @@ body {
 .animation {
     width: 100%;
     height: 100%;
-    background-color: #90ddf4;
+    background-color: #62b9f4;
     position: fixed;
     z-index: 3;
     display: flex;
     justify-content: center;
     align-items: center;
     display: none;
+    animation: anima 8s ease-out;
 }
 
+ 
 .logo {
 
-    width: 200px;
+    width: calc(100% / 6);
     height: 200px;
     /* border: 1px solid; */
     display: flex;
@@ -30,7 +32,7 @@ body {
     justify-content: center;
     align-items: center;
     animation: effect 8s ease-out;
-    /* display: none;   */
+    display: none;
 
 }
 
@@ -44,8 +46,62 @@ body {
 }
 
 .anmSlogan {
+    position: absolute;
+    color: rgb(37, 37, 37);
     margin-top: 15px;
-    width: 100%;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* border: 1px solid;  */
+    top: calc(50% - 25px);
+    left: calc(50% - 70px);
+    animation: slogan 8s ease-out;
+    opacity: 0;
+
+
+}
+
+
+@keyframes anima{ 
+    0% {
+
+        display: flex;
+    }
+
+    80% {
+        display: flex;
+        opacity: 1;
+    } 
+    85%{
+        opacity: 0;
+    }
+    100%{
+       opacity: 0;
+    }
+
+   
+}
+
+@keyframes slogan {
+    0% {
+ 
+        opacity: 0;
+    }
+
+    65% {
+        opacity: 0;
+
+
+    }
+
+    75% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
 
 @keyframes effect {
@@ -63,75 +119,73 @@ body {
     }
 
     10% {
-        transform: scale(2);
-
+        transform: scale(2) translateY(7%);
         display: flex;
-        transform: translateY(7%);
-        opacity: 1;
+
         /* Bắt đầu với opacity là 1 */
     }
 
     15% {
-        transform: translateY(0);
+        transform: translateY(0) scale(2);
         opacity: 1;
         /* Giữ opacity là 1 trong khoảng thời gian chờ */
     }
 
     20% {
         display: flex;
-        transform: translateY(7%);
+        transform: translateY(7%) scale(2);
         opacity: 1;
         /* Bắt đầu với opacity là 1 */
     }
 
     25% {
-        transform: translateY(0);
+        transform: translateY(0) scale(2);
         opacity: 1;
         /* Giữ opacity là 1 trong khoảng thời gian chờ */
     }
 
     30% {
         display: flex;
-        transform: translateY(7%);
+        transform: translateY(7%) scale(2);
         opacity: 1;
         /* Bắt đầu với opacity là 1 */
     }
 
     35% {
-        transform: translateY(0);
+        transform: translateY(0) scale(2);
         opacity: 1;
         /* Giữ opacity là 1 trong khoảng thời gian chờ */
     }
 
     40% {
         display: flex;
-        transform: translateY(7%);
+        transform: translateY(7%) scale(2);
         opacity: 1;
         /* Bắt đầu với opacity là 1 */
     }
 
     45% {
-        transform: translateY(0);
+        transform: translateY(0) scale(2);
         opacity: 1;
         /* Giữ opacity là 1 trong khoảng thời gian chờ */
     }
 
 
     50% {
-        transform: scale(0.4);
+        transform: scale(2) translateY(7%);
+        opacity: 1;
+        /* Giữ opacity là 1 trong khoảng thời gian chờ */
+    }
+
+    55% {
+        transform: translate(0) scale(1);
         opacity: 1;
         /* Giữ opacity là 1 trong khoảng thời gian chờ */
     }
 
     60% {
-        transform: translateX(-50%);
-        opacity: 1;
-        /* Giữ opacity là 1 trong khoảng thời gian chờ */
-    }
 
-    70% {
-
-        transform: scale(0.4);
+        transform: scale(1) translateX(-100%);
         opacity: 1;
         /* Giữ opacity là 1 trong khoảng thời gian chờ */
     }
@@ -140,10 +194,127 @@ body {
     100% {
         /* transform: translateY(0); */
         /* opacity: 0;  */
-        transform: scale(0.4);
+        transform: scale(1) translateX(-100%);
 
-        display: none;
-        /* Phần tử biến mất khi kết thúc animation */
+
+    }
+}
+
+.mask {
+    position: absolute;
+    top: -0%;
+    /* top: -170%; */
+    width: 65%;
+    height: 200%;
+    background-color: white;
+    transform: rotate(50deg);
+    animation: mask 8s ease-out;
+    /* display: none; */
+
+}
+
+.mask1 {
+    position: absolute;
+    top: -60%;
+    /* top: -160%; */
+    width: 50%;
+    height: 200%;
+    background-color: rgb(255, 255, 255);
+    transform: rotate(50deg);
+    animation: mask1 8s ease-out;
+    /* display: none; */
+
+}
+
+.mask2 {
+    position: absolute;
+    top: -120%;
+    top: -168%;
+    width: 65%; 
+    height: 200%;
+    background-color: rgb(255, 255, 255);
+    transform: rotate(50deg);
+    animation: mask2 8s ease-out;
+    /* display: none; */
+
+
+}
+
+@keyframes mask {
+    0% {
+        top: -170%;
+    }
+
+    70% {
+        top: -170%;
+
+    }
+
+    75% {
+        top: 0%;
+        opacity: 1;
+    }
+    80%{
+        opacity: 1;
+        
+    }
+    95%{
+        opacity: 0;
+    }
+    100% {
+        top: -0%;
+
+    }
+}
+
+@keyframes mask1 {
+    0% {
+        top: -160%;
+    }
+
+    75% {
+        top: -160%;  
+
+    }
+ 
+    78% {
+        top: -60%;  
+    }
+    80%{
+        opacity: 1;
+        
+    }  
+    95%{
+        opacity: 0;
+    }
+    
+    100% {
+        top: -60%;
+
+    }
+}
+
+
+@keyframes mask2 {
+    0% {
+        top: -168%;
+    }
+
+    78% {
+        top: -168%; 
+
+    }
+ 
+    80% {
+        top: -120%; 
+        opacity: 1;
+    }
+    95%{
+        opacity: 0;
+    }
+    100% {
+        top: -120%;
+
     }
 }
 
