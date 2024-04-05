@@ -203,6 +203,8 @@ body {
     transform: rotate(50deg);
     animation: mask 8s ease-out;
     /* display: none; */
+    opacity: 0.5;
+
 
 }
 
@@ -216,6 +218,7 @@ body {
     transform: rotate(50deg);
     animation: mask1 8s ease-out;
     /* display: none; */
+    opacity: 0.5;
 
 }
 
@@ -229,6 +232,8 @@ body {
     transform: rotate(50deg);
     animation: mask2 8s ease-out;
     /* display: none; */
+    opacity: 0.5;
+
 
 
 }
@@ -270,13 +275,13 @@ body {
 
     80% {
         top: 30%;
-        opacity: 1;
+        opacity: 0.5;
         left: 30%;
 
     }
 
     90% {
-        opacity: 1;
+        opacity: 0.5;
         left: 30%;
 
 
@@ -311,7 +316,7 @@ body {
     }
 
     90% {
-        opacity: 1;
+        opacity: 0.5;
 
     }
 
@@ -342,7 +347,7 @@ body {
 
     83% {
         top: -130%;
-        opacity: 1;
+        opacity: 0.5;
         left: -10%;
 
     }

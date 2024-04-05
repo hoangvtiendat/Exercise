@@ -208,7 +208,7 @@ body {
         /* background-color: red; */
         position: relative;
         width: calc(100% /2 + 50px);
-        height: calc(100% /2 + 150px) ;
+        height: calc(60%) ;
         background-color: rgba(1, 1, 1, 0.152);
     }
     .img{
