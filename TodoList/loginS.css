@@ -36,13 +36,17 @@ body {
 }   
 .img{
     height: 100%;
-}
+}  
 
 .imgSgr {
     height: 100%;
     /* width: 100%; */
 
 }
+.animation.active {   
+    animation: anima 8s ease-out;
+} 
+
 
 .hookOrange {
     position: absolute;

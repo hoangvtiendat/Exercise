@@ -42,18 +42,21 @@ function checkValid() {
     }
 
 
+
+
+
+
+
+
 }
-
-
-
 function login() {
 
     if (checkValid() === true) {
         const formData = {
-           login : email.value,
-           password : password.value
+            login: email.value,
+            password: password.value
         }
-       
+
         // console.log( "email: ", us, "\npw: ", pw);
         const post = fetch("https://recruitment-api.pyt1.stg.jmr.pl/login", {
             method: 'POST',
@@ -69,7 +72,7 @@ function login() {
                 return reponsive.json(); // Chuyển đổi phản hồi JSON thành đối tượng JavaScript
             } else {
                 throw new Error('Network response was not ok');
-                
+
             }
         }).then(data => {
             if (data.status === 'ok') {
@@ -77,12 +80,11 @@ function login() {
             } else {
                 document.querySelector(".errPassword").style.display = "inline-block";
                 document.querySelector(".errEmail").style.display = "inline-block";
-              
+
             }
-        }).catch(er=>{
-            console.log("error:" , er);
-        }).finally(function()
-        {
+        }).catch(er => {
+            console.log("error:", er);
+        }).finally(function () {
             console.log("done")
         })
 
@@ -90,4 +92,3 @@ function login() {
 
 
 }
-

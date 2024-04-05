@@ -251,7 +251,7 @@ function update() {
     let index = document.querySelector(".indexBox").value;
     deletee(index, typeList);
 
-    
+
     console.log("type: ", typeList);
     let link = document.getElementById("link").value;
     let title = document.getElementById("title").value;
@@ -481,6 +481,22 @@ function submit() {
     }
 }
 
+document.addEventListener("DOMContentLoaded", animationn);
+
+
+function animationn() {
+    // document.getElementById("myElement").style.animation = "anima 8s ease-out ";
+    // document.getElementById("logo").style.animation = "effect 8s ease-out";
+    // document.getElementById("anmSlogan").style.animation = "slogan 8s ease-out";
+    // document.getElementById("mask").style.animation = "mask 8s ease-out";
+    // document.getElementById("mask1").style.animation = "mask1 8s ease-out";
+    // document.getElementById("mask2").style.animation = "mask2 8s ease-out";
+} 
 
 
 
+// Lắng nghe sự kiện khi hiệu ứng "anima" kết thúc
+document.querySelector('.animation').addEventListener('animationend', function() {
+    // Khi hiệu ứng kết thúc, thay đổi trạng thái hiển thị của thẻ div thành "none"
+    this.style.display = 'none';
+});
