@@ -120,7 +120,7 @@ function render() {
 
                 <div class="timeBox">
                     <img src="clock.png" alt="">
-                    <div class="time">J${value.formatDate}</div>
+                    <div class="time">${value.formatDate}</div>
                 </div>
             </div>
 
