@@ -30,7 +30,7 @@ body {
     bottom: 0;
     left: 0;
     z-index: -1;
-    width: 550px;
+    width: 60%;
 
 
 }   
@@ -53,7 +53,7 @@ body {
     right: 0;
     top: 0;
     z-index: -1;
-    width: 350px;
+    width: 60%;
 
 
 }
@@ -208,7 +208,7 @@ body {
         /* background-color: red; */
         position: relative;
         width: calc(100% /2 + 50px);
-        height: calc(60%) ;
+        height: auto ;
         background-color: rgba(1, 1, 1, 0.152);
     }
     .img{
@@ -223,11 +223,18 @@ body {
     }
 
     .ctBox{
-
+        width: 65%;
+        margin: 30px 0;
     }
 
     .contentBox{
         background-color: rgba(0, 0, 0, 0);
+    }
+    .hookOrange{
+        width: 80%;
+    }
+    .hookBlue{
+        width: 80%;
     }
 
 }
