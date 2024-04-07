@@ -29,7 +29,7 @@ function render() {
 
                 <div class="timeBox">
                     <img src="clock.png" alt="">
-                    <div class="time">June 30, 2022</div>
+                    <div class="time">${value.formatDate}</div>
                 </div>
             </div>
 
@@ -60,7 +60,7 @@ function render() {
 
                 <div class="timeBox">
                     <img src="clock.png" alt="">
-                    <div class="time">June 30, 2022</div>
+                    <div class="time">${value.formatDate}</div>
                 </div>
             </div>
 
@@ -90,7 +90,7 @@ function render() {
 
                 <div class="timeBox">
                     <img src="clock.png" alt="">
-                    <div class="time">June 30, 2022</div>
+                    <div class="time">${value.formatDate}</div>
                 </div>
             </div>
 
@@ -120,7 +120,7 @@ function render() {
 
                 <div class="timeBox">
                     <img src="clock.png" alt="">
-                    <div class="time">June 30, 2022</div>
+                    <div class="time">J${value.formatDate}</div>
                 </div>
             </div>
 
@@ -256,6 +256,13 @@ function update() {
     let link = document.getElementById("link").value;
     let title = document.getElementById("title").value;
     let content = document.getElementById("content").value;
+    const currentDate = new Date();
+    const formatDate = currentDate.toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+    })
+
 
 
 
@@ -332,7 +339,8 @@ function update() {
             {
                 link: link,
                 title: title,
-                content: content
+                content: content,
+                formatDate:formatDate
             });
         localStorage.setItem("listTodo", JSON.stringify(listTodo));
         console.log("radioTodo")
@@ -345,7 +353,9 @@ function update() {
             {
                 link: link,
                 title: title,
-                content: content
+                content: content,
+                formatDate:formatDate
+
             });
         localStorage.setItem("listDoing", JSON.stringify(listDoing));
         console.log("radioDoing")
@@ -359,7 +369,9 @@ function update() {
             {
                 link: link,
                 title: title,
-                content: content
+                content: content,
+                formatDate:formatDate
+
             });
         localStorage.setItem("listCompleted", JSON.stringify(listCompleted));
         console.log("radioCompleted")
@@ -373,7 +385,9 @@ function update() {
             {
                 link: link,
                 title: title,
-                content: content
+                content: content,
+                formatDate:formatDate
+
             });
         localStorage.setItem("listBlocked", JSON.stringify(listBlocked));
         console.log("radioBlocked")
@@ -454,6 +468,13 @@ function submit() {
         let title = document.getElementById("title").value;
         let content = document.getElementById("content").value;
 
+        const currentDate = new Date();
+        const formatDate = currentDate.toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        })
+
         // console.log("link: ", link);
         // console.log("title: ", title);
         // console.log("content: ", content);
@@ -464,7 +485,8 @@ function submit() {
             {
                 link: link,
                 title: title,
-                content: content
+                content: content,
+                formatDate: formatDate
             });
         localStorage.setItem("listTodo", JSON.stringify(listTodo));
         document.querySelector(".containerAddNew").style.display = "none";
@@ -481,22 +503,12 @@ function submit() {
     }
 }
 
-document.addEventListener("DOMContentLoaded", animationn);
-
-
-function animationn() {
-    // document.getElementById("myElement").style.animation = "anima 8s ease-out ";
-    // document.getElementById("logo").style.animation = "effect 8s ease-out";
-    // document.getElementById("anmSlogan").style.animation = "slogan 8s ease-out";
-    // document.getElementById("mask").style.animation = "mask 8s ease-out";
-    // document.getElementById("mask1").style.animation = "mask1 8s ease-out";
-    // document.getElementById("mask2").style.animation = "mask2 8s ease-out";
-} 
 
 
 
-// Lắng nghe sự kiện khi hiệu ứng "anima" kết thúc
-document.querySelector('.animation').addEventListener('animationend', function() {
-    // Khi hiệu ứng kết thúc, thay đổi trạng thái hiển thị của thẻ div thành "none"
+
+
+
+document.querySelector('.animation').addEventListener('animationend', function () {
     this.style.display = 'none';
 });
