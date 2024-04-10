@@ -32,8 +32,11 @@
 
 
 
-    <div class="containerAddNew"> 
-        <div class="boxAdd">
+    <div class="containerAddNew">
+        <div class="background" onclick="exit()">
+
+        </div>`
+        <div class="boxAdd" id="idBoxAdd">
             <button onclick="exit()" class=" exit material-symbols-outlined">close</button>
             <div class="titleBoxAdd">Add New Todo</div>
             <div class="titleBoxEdit">Edit Todo</div>
@@ -71,15 +74,15 @@
     </div>
 
     <div id="container">
+        
         <div id="todo" class="todo">
-
             <div class="titleTodo">
                 <div class="tltTodo">Todo</div>
                 <div id="numberTodo" class="numberTodo">0</div>
             </div>
             <div class="lineTodo"></div>
             <div id="listboxTodo" class="listbox">
-                <!-- <div class="box">
+                <!-- <div class="box">     \
 
                     <div class="function">
                         <button onclick="edit()" class="edit"></button>
@@ -97,11 +100,7 @@
                         <div class="time">June 30, 2022</div>
                     </div>
                 </div> -->
-
-
-
             </div>
-
         </div>
 
 
@@ -113,12 +112,7 @@
                 <div id="numberDoing" class="numberTodo numberDoing">0</div>
             </div>
             <div class="lineDoing"></div>
-            <div id="listboxDoing" class="listbox">
-
-            </div>
-
-
-
+            <div id="listboxDoing" class="listbox"></div>
         </div>
 
 
@@ -131,12 +125,7 @@
                 <div id="numberCompleted" class="numberTodo numberCompleted">0</div>
             </div>
             <div class="lineCompleted"></div>
-            <div id="listboxCompleted" class="listbox">
-
-
-            </div>
-
-
+            <div id="listboxCompleted" class="listbox"></div>
         </div>
 
 
@@ -147,13 +136,7 @@
                 <div id="numberBlocked" class="numberTodo numberBlocked">0</div>
             </div>
             <div class="lineBlocked"></div>
-            <div id="listboxBlocked" class="listbox">
-
-
-            </div>
-
-
-
+            <div id="listboxBlocked" class="listbox"></div>
         </div>
 
     </div>

@@ -14,9 +14,9 @@ function render() {
 
         return `
         
-                <div class="box"  draggable = "true">
+            <div class="box"  draggable = "true">
 
-                <div class="function">
+            <div class="function">
                     <button onclick="edit(${index}, 'todo')" class="edit"></button>
                     <button onclick="deletee(${index}, 'todo')" class="delete"></button>
                     <input type="text" class="indexBox" name="" id="">
@@ -45,9 +45,9 @@ function render() {
 
         return `
         
-                <div class="box"  draggable = "true">
+            <div class="box"  draggable = "true">
 
-                <div class="function">
+            <div class="function">
                     <button onclick="edit(${index}, 'doing')" class="edit"></button>
                     <button onclick="deletee(${index}, 'doing')" class="delete"></button>
                     <input type="text" class="indexBox" name="" id="">
@@ -75,9 +75,9 @@ function render() {
 
         return `
         
-                <div class="box"  draggable = "true">
+            <div class="box"  draggable = "true">
 
-                <div class="function">
+            <div class="function">
                     <button onclick="edit(${index}, 'completed')" class="edit"></button>
                     <button onclick="deletee(${index}, 'completed')" class="delete"></button>
                     <input type="text" class="indexBox" name="" id="">
@@ -105,9 +105,9 @@ function render() {
 
         return `
         
-                <div class="box" draggable = "true">
+            <div class="box" draggable = "true">
 
-                <div class="function">
+            <div class="function">
                     <button onclick="edit(${index}, 'blocked')" class="edit"></button>
                     <button onclick="deletee(${index}, 'blocked')" class="delete"></button>
                     <input type="text" class="indexBox" name="" id="">
@@ -133,7 +133,226 @@ function render() {
     document.getElementById("numberDoing").innerText = listDoing.length;
     document.getElementById("numberCompleted").innerText = listCompleted.length;
     document.getElementById("numberBlocked").innerText = listBlocked.length;
+
+
 }
+
+
+let lists = document.querySelectorAll(".listbox")
+let listboxTodo = document.getElementById("listboxTodo");
+let listboxDoing = document.getElementById("listboxDoing");
+let listboxCompleted = document.getElementById("listboxCompleted");
+let listboxBlocked = document.getElementById("listboxBlocked");
+
+for (list of lists) {
+    list.addEventListener("dragstart", function (e) {
+        console.log("dragstart")
+        let selected = e.target;
+
+
+        //keo tha vao listDoing
+        listboxDoing.addEventListener("dragover", function (e) {
+
+            e.preventDefault();
+            console.log("dragover")
+        });
+
+        listboxDoing.addEventListener("drop", function (e) {
+            if (selected.parentElement !== listboxDoing) {
+                listboxDoing.appendChild(selected);
+                console.log(selected)
+                console.log(selected.querySelector(".linkBox").innerText)
+
+                listDoing.push(
+                    {
+                        link: selected.querySelector(".linkBox").innerText,
+                        title: selected.querySelector(".titleBox").innerText,
+                        content: selected.querySelector(".contentBox").innerText,
+                        formatDate: selected.querySelector(".time").innerText
+                    });
+                localStorage.setItem("listDoing", JSON.stringify(listDoing));
+
+                let indexToRemove1 = listTodo.findIndex(item => item.link === selected.querySelector(".linkBox").innerText);
+                if (indexToRemove1 !== -1) {
+                    listTodo.splice(indexToRemove1, 1);
+                    localStorage.setItem("listTodo", JSON.stringify(listTodo));
+                }
+
+                let indexToRemove3 = listCompleted.findIndex(item => item.link === selected.querySelector(".linkBox").innerText);
+                if (indexToRemove3 !== -1) {
+                    listCompleted.splice(indexToRemove3, 1);
+                    localStorage.setItem("listCompleted", JSON.stringify(listCompleted));
+                }
+                let indexToRemove4 = listBlocked.findIndex(item => item.link === selected.querySelector(".linkBox").innerText);
+                if (indexToRemove4 !== -1) {
+                    listBlocked.splice(indexToRemove4, 1);
+                    localStorage.setItem("listDoing", JSON.stringify(listBlocked));
+                }
+
+                render();
+                selected = null;
+                console.log("drop")
+            }
+        });
+
+
+
+        //keo tha vao listTodo
+        listboxTodo.addEventListener("dragover", function (e) {
+
+            e.preventDefault();
+            console.log("dragover")
+        });
+
+        listboxTodo.addEventListener("drop", function (e) {
+            if (selected.parentElement !== listboxTodo) {
+                listboxTodo.appendChild(selected);
+                console.log(selected)
+                console.log(selected.querySelector(".linkBox").innerText)
+
+                listTodo.push(
+                    {
+                        link: selected.querySelector(".linkBox").innerText,
+                        title: selected.querySelector(".titleBox").innerText,
+                        content: selected.querySelector(".contentBox").innerText,
+                        formatDate: selected.querySelector(".time").innerText
+                    });
+                localStorage.setItem("listTodo", JSON.stringify(listTodo));
+
+
+                let indexToRemove2 = listDoing.findIndex(item => item.link === selected.querySelector(".linkBox").innerText);
+                if (indexToRemove2 !== -1) {
+                    listDoing.splice(indexToRemove2, 1);
+                    localStorage.setItem("listDoing", JSON.stringify(listDoing));
+                }
+                let indexToRemove3 = listCompleted.findIndex(item => item.link === selected.querySelector(".linkBox").innerText);
+                if (indexToRemove3 !== -1) {
+                    listCompleted.splice(indexToRemove3, 1);
+                    localStorage.setItem("listCompleted", JSON.stringify(listCompleted));
+                }
+                let indexToRemove4 = listBlocked.findIndex(item => item.link === selected.querySelector(".linkBox").innerText);
+                if (indexToRemove4 !== -1) {
+                    listBlocked.splice(indexToRemove4, 1);
+                    localStorage.setItem("listDoing", JSON.stringify(listBlocked));
+                }
+
+
+                render();
+                selected = null;
+                console.log("drop")
+            }
+        });
+
+
+        //keo tha vao listCompleted
+        listboxCompleted.addEventListener("dragover", function (e) {
+
+            e.preventDefault();
+            console.log("dragover")
+        });
+
+        listboxCompleted.addEventListener("drop", function (e) {
+            if (selected.parentElement !== listboxCompleted) {
+                listboxCompleted.appendChild(selected);
+                console.log(selected)
+                console.log(selected.querySelector(".linkBox").innerText)
+
+                listCompleted.push(
+                    {
+                        link: selected.querySelector(".linkBox").innerText,
+                        title: selected.querySelector(".titleBox").innerText,
+                        content: selected.querySelector(".contentBox").innerText,
+                        formatDate: selected.querySelector(".time").innerText
+                    });
+                localStorage.setItem("listCompleted", JSON.stringify(listCompleted));
+
+                let indexToRemove1 = listTodo.findIndex(item => item.link === selected.querySelector(".linkBox").innerText);
+                if (indexToRemove1 !== -1) {
+                    listTodo.splice(indexToRemove1, 1);
+                    localStorage.setItem("listTodo", JSON.stringify(listTodo));
+                }
+
+                let indexToRemove2 = listDoing.findIndex(item => item.link === selected.querySelector(".linkBox").innerText);
+                if (indexToRemove2 !== -1) {
+                    listDoing.splice(indexToRemove2, 1);
+                    localStorage.setItem("listDoing", JSON.stringify(listDoing));
+                }
+
+                let indexToRemove4 = listBlocked.findIndex(item => item.link === selected.querySelector(".linkBox").innerText);
+                if (indexToRemove4 !== -1) {
+                    listBlocked.splice(indexToRemove4, 1);
+                    localStorage.setItem("listBlocked", JSON.stringify(listBlocked));
+                }
+
+
+                render();
+                selected = null;
+                console.log("drop")
+            }
+        });
+
+
+
+        //keo tha vao listBlocked
+        listboxBlocked.addEventListener("dragover", function (e) {
+
+            e.preventDefault();
+            console.log("dragover")
+        });
+
+        listboxBlocked.addEventListener("drop", function (e) {
+            if (selected.parentElement !== listboxBlocked) {
+                listboxBlocked.appendChild(selected);
+                console.log(selected)
+                console.log(selected.querySelector(".linkBox").innerText)
+
+                listBlocked.push(
+                    {
+                        link: selected.querySelector(".linkBox").innerText,
+                        title: selected.querySelector(".titleBox").innerText,
+                        content: selected.querySelector(".contentBox").innerText,
+                        formatDate: selected.querySelector(".time").innerText
+                    });
+                localStorage.setItem("listBlocked", JSON.stringify(listBlocked));
+
+                let indexToRemove1 = listTodo.findIndex(item => item.link === selected.querySelector(".linkBox").innerText);
+                if (indexToRemove1 !== -1) {
+                    listTodo.splice(indexToRemove1, 1);
+                    localStorage.setItem("listTodo", JSON.stringify(listTodo));
+                }
+
+                let indexToRemove2 = listDoing.findIndex(item => item.link === selected.querySelector(".linkBox").innerText);
+                if (indexToRemove2 !== -1) {
+                    listDoing.splice(indexToRemove2, 1);
+                    localStorage.setItem("listDoing", JSON.stringify(listDoing));
+                }
+                let indexToRemove3 = listCompleted.findIndex(item => item.link === selected.querySelector(".linkBox").innerText);
+                if (indexToRemove3 !== -1) {
+                    listCompleted.splice(indexToRemove3, 1);
+                    localStorage.setItem("listCompleted", JSON.stringify(listCompleted));
+                }
+
+
+
+                render();
+                selected = null;
+                console.log("drop")
+            }
+        });
+
+
+
+
+
+
+    })
+
+
+
+}
+
+
+
 
 
 function exit() {
@@ -247,156 +466,186 @@ function edit(index, type) {
 }
 
 function update() {
+    let checkVal = false
+    let boxElement = document.querySelector(".boxAdd");
+    let inpElement = boxElement.querySelectorAll(".inpBoxAdd");
+    validated();
+    let dem = 0;
+    for (let i = 0; i < inpElement.length; i++) {
+        // console.log("check: ", inpElement[i].style.border)
+        if (inpElement[i].style.border === "1px solid green") {
+            dem = dem + 1;
+            // console.log("green: ", dem)
 
-    let index = document.querySelector(".indexBox").value;
-    deletee(index, typeList);
-
-
-    console.log("type: ", typeList);
-    let link = document.getElementById("link").value;
-    let title = document.getElementById("title").value;
-    let content = document.getElementById("content").value;
-    const currentDate = new Date();
-    const formatDate = currentDate.toLocaleDateString('en-US', {
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric'
-    })
-
-
-
-
-    // if (typeList === 'todo') {
-    //     listTodo.push({
-    //         link: link,
-    //         title: title,
-    //         content: content
-    //     });
-    // }
-    // else if (typeList === 'doing') {
-
-
-
-    //     listDoing.push({
-    //         link: link,
-    //         title: title,
-    //         content: content
-    //     });
-
-
-    // }
-    // else if (typeList === 'completed') {
-
-    //     listCompleted.push({
-    //         link: link,
-    //         title: title,
-    //         content: content
-    //     });
-
-    // }
-    // else if (typeList === 'blocked') {
-
-
-    //     listBlocked.push({
-    //         link: link,
-    //         title: title,
-    //         content: content
-    //     });
-    // }
-
-    // else {
-    //     console.log("err")
-    // }
-
-
-
-    // console.log("index: ", index);
-
-    document.querySelector(".containerAddNew").style.display = "none";
-    document.getElementById("link").value = "";
-    document.getElementById("title").value = "";
-    document.getElementById("content").value = "";
-    let radioButton = document.querySelectorAll('input[type="radio"][name="radio"]');
-    let selectedRadio = null;
-
-
-
-
-    radioButton.forEach(function (button) {
-        if (button.checked) {
-            selectedRadio = button;
-            return;
         }
-    });
-
-
-
-    console.log("slt: ", selectedRadio.id);
-
-    if (selectedRadio && selectedRadio.id === "ckTodo") {
-
-        listTodo.push(
-            {
-                link: link,
-                title: title,
-                content: content,
-                formatDate:formatDate
-            });
-        localStorage.setItem("listTodo", JSON.stringify(listTodo));
-        console.log("radioTodo")
-    }
-
-    else if (selectedRadio && selectedRadio.id === "ckDoing") {
-
-
-        listDoing.push(
-            {
-                link: link,
-                title: title,
-                content: content,
-                formatDate:formatDate
-
-            });
-        localStorage.setItem("listDoing", JSON.stringify(listDoing));
-        console.log("radioDoing")
-
 
     }
-    else if (selectedRadio && selectedRadio.id === "ckCompleted") {
+    if (dem === inpElement.length) {
 
-
-        listCompleted.push(
-            {
-                link: link,
-                title: title,
-                content: content,
-                formatDate:formatDate
-
-            });
-        localStorage.setItem("listCompleted", JSON.stringify(listCompleted));
-        console.log("radioCompleted")
-
-    }
-
-    else if (selectedRadio && selectedRadio.id === "ckBlocked") {
-
-
-        listBlocked.push(
-            {
-                link: link,
-                title: title,
-                content: content,
-                formatDate:formatDate
-
-            });
-        localStorage.setItem("listBlocked", JSON.stringify(listBlocked));
-        console.log("radioBlocked")
-
+        checkVal = true;
     }
     else {
-        alert("ERROR")
+        dem = 0;
+        // console.log("errr")
     }
-    render();
+    // console.log("dem: ", dem)
+
+    if (checkVal) {
+        let index = document.querySelector(".indexBox").value;
+        deletee(index, typeList);
+
+
+        console.log("type: ", typeList);
+        let link = document.getElementById("link").value;
+        let title = document.getElementById("title").value;
+        let content = document.getElementById("content").value;
+        const currentDate = new Date();
+        const formatDate = currentDate.toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        })
+
+
+
+
+        // if (typeList === 'todo') {
+        //     listTodo.push({
+        //         link: link,
+        //         title: title,
+        //         content: content
+        //     });
+        // }
+        // else if (typeList === 'doing') {
+
+
+
+        //     listDoing.push({
+        //         link: link,
+        //         title: title,
+        //         content: content
+        //     });
+
+
+        // }
+        // else if (typeList === 'completed') {
+
+        //     listCompleted.push({
+        //         link: link,
+        //         title: title,
+        //         content: content
+        //     });
+
+        // }
+        // else if (typeList === 'blocked') {
+
+
+        //     listBlocked.push({
+        //         link: link,
+        //         title: title,
+        //         content: content
+        //     });
+        // }
+
+        // else {
+        //     console.log("err")
+        // }
+
+
+
+        // console.log("index: ", index);
+
+        document.querySelector(".containerAddNew").style.display = "none";
+        document.getElementById("link").value = "";
+        document.getElementById("title").value = "";
+        document.getElementById("content").value = "";
+        let radioButton = document.querySelectorAll('input[type="radio"][name="radio"]');
+        let selectedRadio = null;
+
+
+
+
+        radioButton.forEach(function (button) {
+            if (button.checked) {
+                selectedRadio = button;
+                return;
+            }
+        });
+
+
+
+        console.log("slt: ", selectedRadio.id);
+
+
+        if (selectedRadio && selectedRadio.id === "ckTodo") {
+
+            listTodo.push(
+                {
+                    link: link,
+                    title: title,
+                    content: content,
+                    formatDate: formatDate
+                });
+            localStorage.setItem("listTodo", JSON.stringify(listTodo));
+            console.log("radioTodo")
+        }
+
+        else if (selectedRadio && selectedRadio.id === "ckDoing") {
+
+
+            listDoing.push(
+                {
+                    link: link,
+                    title: title,
+                    content: content,
+                    formatDate: formatDate
+
+                });
+            localStorage.setItem("listDoing", JSON.stringify(listDoing));
+            console.log("radioDoing")
+
+
+        }
+        else if (selectedRadio && selectedRadio.id === "ckCompleted") {
+
+
+            listCompleted.push(
+                {
+                    link: link,
+                    title: title,
+                    content: content,
+                    formatDate: formatDate
+
+                });
+            localStorage.setItem("listCompleted", JSON.stringify(listCompleted));
+            console.log("radioCompleted")
+
+        }
+
+        else if (selectedRadio && selectedRadio.id === "ckBlocked") {
+
+
+            listBlocked.push(
+                {
+                    link: link,
+                    title: title,
+                    content: content,
+                    formatDate: formatDate
+
+                });
+            localStorage.setItem("listBlocked", JSON.stringify(listBlocked));
+            console.log("radioBlocked")
+
+        }
+        else {
+            alert("ERROR")
+        }
+        render();
+    }
+
+
+
+
 }
 
 function deletee(index, type) {
@@ -452,7 +701,7 @@ function submit() {
         }
 
     }
-    if (dem === inpElement.length) {
+    if (dem === inpElement.length) {1
 
         checkVal = true;
     }
@@ -504,11 +753,13 @@ function submit() {
 }
 
 
-
-
-
-
-
 document.querySelector('.animation').addEventListener('animationend', function () {
     this.style.display = 'none';
 });
+
+// document.querySelector(".containerAddNew").addEventListener("onclick", exit);
+
+
+
+render();
+
