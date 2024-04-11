@@ -143,11 +143,11 @@ let listboxTodo = document.getElementById("listboxTodo");
 let listboxDoing = document.getElementById("listboxDoing");
 let listboxCompleted = document.getElementById("listboxCompleted");
 let listboxBlocked = document.getElementById("listboxBlocked");
-
+let selected;
 for (list of lists) {
     list.addEventListener("dragstart", function (e) {
         console.log("dragstart")
-        let selected = e.target;
+        selected = e.target;
 
 
         //keo tha vao listDoing
@@ -158,6 +158,7 @@ for (list of lists) {
         });
 
         listboxDoing.addEventListener("drop", function (e) {
+            e.preventDefault();
             if (selected.parentElement !== listboxDoing) {
                 listboxDoing.appendChild(selected);
                 console.log(selected)
@@ -189,10 +190,13 @@ for (list of lists) {
                     localStorage.setItem("listDoing", JSON.stringify(listBlocked));
                 }
 
-                render();
-                selected = null;
-                console.log("drop")
+
             }
+            selected = null;
+            console.log("drop")
+            render();
+
+
         });
 
 
@@ -205,6 +209,8 @@ for (list of lists) {
         });
 
         listboxTodo.addEventListener("drop", function (e) {
+            e.preventDefault();
+
             if (selected.parentElement !== listboxTodo) {
                 listboxTodo.appendChild(selected);
                 console.log(selected)
@@ -237,10 +243,12 @@ for (list of lists) {
                 }
 
 
-                render();
-                selected = null;
-                console.log("drop")
+
             }
+            selected = null;
+            console.log("drop")
+            render();
+
         });
 
 
@@ -252,6 +260,8 @@ for (list of lists) {
         });
 
         listboxCompleted.addEventListener("drop", function (e) {
+            e.preventDefault();
+
             if (selected.parentElement !== listboxCompleted) {
                 listboxCompleted.appendChild(selected);
                 console.log(selected)
@@ -285,10 +295,11 @@ for (list of lists) {
                 }
 
 
-                render();
-                selected = null;
-                console.log("drop")
-            }
+
+            } selected = null;
+            console.log("drop")
+            render();
+
         });
 
 
@@ -301,6 +312,8 @@ for (list of lists) {
         });
 
         listboxBlocked.addEventListener("drop", function (e) {
+            e.preventDefault();
+
             if (selected.parentElement !== listboxBlocked) {
                 listboxBlocked.appendChild(selected);
                 console.log(selected)
@@ -334,10 +347,11 @@ for (list of lists) {
 
 
 
-                render();
-                selected = null;
-                console.log("drop")
-            }
+
+            } selected = null;
+            console.log("drop")
+            render();
+
         });
 
 
@@ -347,7 +361,7 @@ for (list of lists) {
 
     })
 
-
+    
 
 }
 
@@ -701,7 +715,8 @@ function submit() {
         }
 
     }
-    if (dem === inpElement.length) {1
+    if (dem === inpElement.length) {
+        1
 
         checkVal = true;
     }
