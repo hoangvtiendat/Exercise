@@ -143,7 +143,7 @@ let listboxTodo = document.getElementById("listboxTodo");
 let listboxDoing = document.getElementById("listboxDoing");
 let listboxCompleted = document.getElementById("listboxCompleted");
 let listboxBlocked = document.getElementById("listboxBlocked");
-let selected;
+let selected = null;
 for (list of lists) {
     list.addEventListener("dragstart", function (e) {
         console.log("dragstart")
@@ -154,7 +154,7 @@ for (list of lists) {
         listboxDoing.addEventListener("dragover", function (e) {
 
             e.preventDefault();
-            console.log("dragover")
+            console.log("dragoverDoing")
         });
 
         listboxDoing.addEventListener("drop", function (e) {
@@ -163,6 +163,10 @@ for (list of lists) {
                 listboxDoing.appendChild(selected);
                 console.log(selected)
                 console.log(selected.querySelector(".linkBox").innerText)
+
+
+                listDoing = localStorage.getItem("listDoing") ? JSON.parse(localStorage.getItem("listDoing")) : [];
+
 
                 listDoing.push(
                     {
@@ -187,10 +191,13 @@ for (list of lists) {
                 let indexToRemove4 = listBlocked.findIndex(item => item.link === selected.querySelector(".linkBox").innerText);
                 if (indexToRemove4 !== -1) {
                     listBlocked.splice(indexToRemove4, 1);
-                    localStorage.setItem("listDoing", JSON.stringify(listBlocked));
+                    localStorage.setItem("listBlocked", JSON.stringify(listBlocked));
                 }
 
-
+                console.log("ok")
+            }
+            else{
+                console.log("fail")
             }
             selected = null;
             console.log("drop")
@@ -205,7 +212,7 @@ for (list of lists) {
         listboxTodo.addEventListener("dragover", function (e) {
 
             e.preventDefault();
-            console.log("dragover")
+            console.log("dragoverTodo")
         });
 
         listboxTodo.addEventListener("drop", function (e) {
@@ -215,6 +222,7 @@ for (list of lists) {
                 listboxTodo.appendChild(selected);
                 console.log(selected)
                 console.log(selected.querySelector(".linkBox").innerText)
+                listTodo = localStorage.getItem("listTodo") ? JSON.parse(localStorage.getItem("listTodo")) : [];
 
                 listTodo.push(
                     {
@@ -239,7 +247,7 @@ for (list of lists) {
                 let indexToRemove4 = listBlocked.findIndex(item => item.link === selected.querySelector(".linkBox").innerText);
                 if (indexToRemove4 !== -1) {
                     listBlocked.splice(indexToRemove4, 1);
-                    localStorage.setItem("listDoing", JSON.stringify(listBlocked));
+                    localStorage.setItem("listBlocked", JSON.stringify(listBlocked));
                 }
 
 
@@ -256,7 +264,7 @@ for (list of lists) {
         listboxCompleted.addEventListener("dragover", function (e) {
 
             e.preventDefault();
-            console.log("dragover")
+            console.log("dragoverCompleted")
         });
 
         listboxCompleted.addEventListener("drop", function (e) {
@@ -266,6 +274,7 @@ for (list of lists) {
                 listboxCompleted.appendChild(selected);
                 console.log(selected)
                 console.log(selected.querySelector(".linkBox").innerText)
+                listCompleted = localStorage.getItem("listCompleted") ? JSON.parse(localStorage.getItem("listCompleted")) : [];
 
                 listCompleted.push(
                     {
@@ -308,7 +317,7 @@ for (list of lists) {
         listboxBlocked.addEventListener("dragover", function (e) {
 
             e.preventDefault();
-            console.log("dragover")
+            console.log("dragoverBlocked")
         });
 
         listboxBlocked.addEventListener("drop", function (e) {
@@ -318,7 +327,7 @@ for (list of lists) {
                 listboxBlocked.appendChild(selected);
                 console.log(selected)
                 console.log(selected.querySelector(".linkBox").innerText)
-
+                listBlocked = localStorage.getItem("listBlocked") ? JSON.parse(localStorage.getItem("listBlocked")) : [];
                 listBlocked.push(
                     {
                         link: selected.querySelector(".linkBox").innerText,
@@ -361,7 +370,7 @@ for (list of lists) {
 
     })
 
-    
+
 
 }
 
