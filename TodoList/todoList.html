@@ -40,10 +40,10 @@
             <button onclick="exit()" class=" exit material-symbols-outlined">close</button>
             <div class="titleBoxAdd">Add New Todo</div>
             <div class="titleBoxEdit">Edit Todo</div>
-            <input onclick="validated()" class="inpBoxAdd" type="text" name="" id="link"
+            <input onfocus="validated()" class="inpBoxAdd" type="text" name="" id="link"
                 placeholder="Category Etc Marketing">
-            <input onclick="validated()" class="inpBoxAdd" type="text" name="" id="title" placeholder="Title">
-            <textarea onclick="validated()" class="inpBoxAdd inpBoxAdd2" name="" id="content" cols="30" rows="10"
+            <input onfocus="validated()" class="inpBoxAdd" type="text" name="" id="title" placeholder="Title">
+            <textarea onfocus="validated()" class="inpBoxAdd inpBoxAdd2" name="" id="content" cols="30" rows="10"
                 placeholder="Content"></textarea>
             <div class="checkTodo">
                 <div class="ckDg">
@@ -60,8 +60,8 @@
 
                 </div>
             </div>
-            <button onclick="submit()" class="btnSubmit">Submit</button>
-            <button onclick="update()" class="btnUpdate">Update</button>
+            <button onclick="submit()" onfocus="validated()" class="btnSubmit">Submit</button>
+            <button onclick="update()" onfocus="validated()" class="btnUpdate">Update</button>
         </div>
     </div>
     <div class="headerr">

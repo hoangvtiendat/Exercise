@@ -92,3 +92,21 @@ function login() {
 
 
 }
+
+function openmask() {
+    document.querySelector(".openmask").style.display = "none";
+    document.querySelector(".closemask").style.display = "inline-block";
+    document.querySelector("#password").type = "password";
+
+
+}
+
+function closemask() {
+    document.querySelector(".openmask").style.display = "inline-block";
+    document.querySelector(".closemask").style.display = " none";
+    document.querySelector("#password").type = " text";
+
+}
+
+
+

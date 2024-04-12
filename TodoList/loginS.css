@@ -33,19 +33,22 @@ body {
     width: 60%;
 
 
-}   
-.img{
+}
+
+
+.img {
     height: 100%;
-}  
+}
 
 .imgSgr {
     height: 100%;
     /* width: 100%; */
 
 }
-.animation.active {   
+
+.animation.active {
     animation: anima 8s ease-out;
-} 
+}
 
 
 .hookOrange {
@@ -115,6 +118,93 @@ body {
     font-size: 14px;
 }
 
+.import {
+    width: 100%;
+    /* height: 90px; */
+    margin-top: 25px;
+    position: relative;
+}
+
+.thongbaous {
+    display: none;
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-size: 10px;
+    color: #fff;
+    position: absolute;
+    top: 70px;
+    left: 0px;
+    background-color: #fff;
+
+    border-radius: 5px;
+    padding: 8px;
+    /* transition: all 10s ease; */
+
+    background-color: #5f6368;
+}
+
+.tamgiacus {
+    border: 1px solid #5f6368;
+    width: 7px;
+    height: 7px;
+    position: absolute;
+    /* z-index: -1; */
+    top: -3px;
+    transform: translateX(10px) rotate(45deg);
+    background-color: #5f6368;
+}
+
+.inpus {
+    height: auto;
+}
+
+.inpus:hover .thongbaous {
+    display: inline-block;
+}
+
+
+
+.thongbaopw {
+    display: none;
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-size: 10px;
+    color: #fff;
+    position: absolute;
+    top: 160px;
+    left: 0px;
+    background-color: #fff;
+
+    border-radius: 5px;
+    padding: 8px;
+    /* transition: all 10s ease; */
+
+    background-color: #5f6368;
+
+
+
+}
+
+.tamgiacpw {
+    border: 1px solid #5f6368;
+    width: 7px;
+    height: 7px;
+    position: absolute;
+    /* z-index: -1; */
+    top: -3px;
+    transform: translateX(10px) rotate(45deg);
+    background-color: #5f6368;
+
+
+
+
+}
+
+.inppw:hover .thongbaopw {
+    display: inline-block;
+}
+
+
 .reg {
     height: 100%;
 
@@ -127,10 +217,20 @@ body {
 
 }
 
-.import {
-    width: 100%;
-    /* height: 90px; */
-    margin-top: 25px;
+.mask{
+    position: absolute;
+    /* display: none; */
+    top: 122px;
+    right: -25px;
+    color: rgb(115, 113, 113);
+    font-size: 20px;
+    background-color: rgba(74, 68, 68, 0)  ;
+    border: none;
+    cursor: pointer;
+  
+}
+.openmask{
+    display: none;
 }
 
 .tltPassword {
@@ -148,7 +248,8 @@ body {
     outline: none;
 }
 
-.tltEmail{
+
+.tltEmail {
     font-size: 14px;
 }
 
@@ -160,22 +261,25 @@ body {
 
 .ck {
     background-color: #00a6da;
-    width:17px;
+    width: 17px;
 
 }
-.remember{
+
+.remember {
     margin-left: 7px;
     font-size: 12px;
-    
+
 }
-::placeholder{
+
+::placeholder {
     font-size: 14px;
     /* padding-left: 10px; */
     color: rgb(199, 198, 198);
-    
-   
+
+
 
 }
+
 #login {
     width: 100%;
     height: 45px;
@@ -187,53 +291,58 @@ body {
     transition: 0.5s all ease;
 }
 
-#login:hover{
+#login:hover {
     background-color: #0185ad;
 
 }
 
-.errEmail{
+.errEmail {
     color: rgb(198, 2, 2);
     display: none;
 
 }
-.errPassword{
+
+.errPassword {
     color: rgb(198, 2, 2);
     display: none;
-    
+
 }
 
 @media only screen and (max-width: 970px) {
-    .box{
+    .box {
         /* background-color: red; */
         position: relative;
         width: calc(100% /2 + 50px);
-        height: auto ;
+        height: auto;
         background-color: rgba(1, 1, 1, 0.152);
     }
-    .img{
+
+    .img {
         position: absolute;
         width: calc(100%);
         /* background-color: red; */
         z-index: -1;
 
     }
-    .imgSgr{
+
+    .imgSgr {
         width: 100%;
     }
 
-    .ctBox{
+    .ctBox {
         width: 65%;
         margin: 30px 0;
     }
 
-    .contentBox{
+    .contentBox {
         background-color: rgba(0, 0, 0, 0);
     }
-    .hookOrange{
+
+    .hookOrange {
         width: 80%;
     }
-    .hookBlue{
+
+    .hookBlue {
         width: 80%;
     }
 

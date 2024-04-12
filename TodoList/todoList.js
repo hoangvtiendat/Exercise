@@ -374,7 +374,9 @@ function exit() {
     document.getElementById("link").value = "";
     document.getElementById("title").value = "";
     document.getElementById("content").value = "";
-
+    document.getElementById("link").style.border = "1px solid grey";
+    document.getElementById("title").style.border = "1px solid grey";
+    document.getElementById("content").style.border = "1px solid grey";
 }
 
 function newTask() {
@@ -420,6 +422,9 @@ var typeList;
 
 function edit(index, type) {
 
+    document.getElementById("link").style.border = "1px solid green";
+    document.getElementById("title").style.border = "1px solid green";
+    document.getElementById("content").style.border = "1px solid green";
     typeList = type;
     console.log("typeList: ", typeList)
     if (type === 'todo') {
